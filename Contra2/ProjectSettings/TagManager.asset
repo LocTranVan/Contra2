@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Background
-  - ' Milestones'
+  - Milestones
+  - hello
+  - LastMileStones
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Background
+  - Enemy
   - 
   - 
   - 

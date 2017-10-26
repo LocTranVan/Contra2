@@ -5,13 +5,21 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject player;
-	public float cameraSpeed;
+	public Transform player;
+	public Transform minPosition;
+	public float cameraSpeedX, cameraSpeedY;
 	private float offset;
 	private bool inclinedPlane = false;
+	private bool milesStone = false;
+	private float distance;
+
+	private float yMax, yMix;
 	private void Awake()
 	{
-		offset = Mathf.Abs(transform.position.y - player.transform.position.y);
+
+		offset = player.position.y - minPosition.position.y;
+		yMax = 2 * offset;
+
 	}
 	void Start () {
 		
@@ -24,29 +32,41 @@ public class CameraMovement : MonoBehaviour {
 	private void FixedUpdate()
 	{
 		MoveCamera();
-		//checkVision();
-
 	}
-	void checkVision()
-	{
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 5f);	
-		inclinedPlane = (hit.collider != null && hit.collider.tag == "Background") ? true : false;
-		
-	}
+	//bug
 	void MoveCamera()
 	{
 		Vector3 position = transform.position;
-		if (position.x < player.transform.position.x) { 
-			position.x += cameraSpeed * Time.fixedDeltaTime;
-		}	
-
-		if((player.transform.position.y - position.y) >= offset)
+		if (position.x < player.transform.position.x)
 		{
-			position.y += cameraSpeed * Time.fixedDeltaTime;
+			position.x += cameraSpeedX * Time.fixedDeltaTime;
+		}
+		if (position.y < player.transform.position.y)
+		{
+			position.y += cameraSpeedY * Time.fixedDeltaTime;
+		}
+
+
+		float distance = player.position.y - minPosition.position.y;
+
+		if (distance >= yMax)
+		{
+			position.y += cameraSpeedX * Time.fixedDeltaTime;
+
+		}
+
+		if(distance <= offset)
+		{
+			yMax = 2 * offset;
 		}
 
 
 		transform.position = position;
 	}
+	public void setMileStones()
+	{
+		yMax = yMax - offset / 2;
 	
+	}
+
 }
