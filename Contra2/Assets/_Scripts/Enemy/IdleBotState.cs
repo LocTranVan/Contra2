@@ -8,16 +8,10 @@ public class IdleBotState : IEnemyState
 
 	private float idleTimer;
 	private float idleDuration;
-	private const int IDLETOP = 1, IDLEBOT = -1, IDLERIGHT = 2, IDLESLANTTOP = 3, IDLESLANTBOT = -3;
 	private float speedX = 0, speedY = 0;
 	public void Execute()
 	{
 		//Idle(1);
-
-		//if (enemy.Target != null)
-		//{
-		//enemy.ChangeState(new PatrolState());
-		//}
 		StartState();
 	}
 
@@ -25,7 +19,7 @@ public class IdleBotState : IEnemyState
 	{
 		//idleDuration = UnityEngine.Random.Range(1, 10);
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
+
 	}
 
 	public void Exit()

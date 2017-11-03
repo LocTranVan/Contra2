@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public abstract class Character : MonoBehaviour {
 
 	[SerializeField]
 	protected float movementSpeedX, movementSpeedY, jumpSpeed, bulletSpeed;
@@ -36,14 +36,16 @@ public class Character : MonoBehaviour {
 
 	[SerializeField]
 	protected int health;
-	//public  bool IsDead
-	//{
-	//	get;
-	//}
+	public  bool IsDead
+	{
+		get;
+		set;
+	}
 	public bool TakingDamage
 	{
 		get; set;
 	}
+	public abstract void TakeDamage();
 
 	// Use this for initialization
 	public virtual void Start()
@@ -70,13 +72,16 @@ public class Character : MonoBehaviour {
 	{
 		mRigidbody.AddForce(new Vector2(0, jumpSpeed));
 	}
-	//public virtual void OnTriggerEnter2D(Collider2D other)
-	//{
-		//if (damageSources.Contains(other.tag))
-		//{
-			//StartCoroutine(TakeDamage());
-		//}//
-	//}
+	
+	public virtual void OnTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log("hello" + other.tag);
+		if (damageSources.Contains(other.tag))
+		{
+			TakeDamage();
+		}
+	}
+
 	public virtual void Shooting()
 	{
 		Vector2 positionGun = Vector2.zero;

@@ -15,8 +15,7 @@ public class IdleTopState : IEnemyState
 
 	}
 	public void Execute()
-	{
-		
+	{		
 		StartState();
 	}
 
@@ -24,7 +23,7 @@ public class IdleTopState : IEnemyState
 	{
 		//idleDuration = UnityEngine.Random.Range(1, 10);
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
+
 	}
 
 	public void Exit()

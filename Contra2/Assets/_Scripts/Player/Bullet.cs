@@ -15,6 +15,10 @@ public class Bullet : MonoBehaviour {
 	private void FixedUpdate()
 	{	
 	}
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		DestroyObject(gameObject);
+	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Destroy(gameObject);

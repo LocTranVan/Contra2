@@ -5,22 +5,50 @@ using UnityEngine;
 public class SlantBotState : IEnemyState
 {
 	private Enemy enemy;
-
+	private float walkingBotTimer;
+	private float walkingBotDuration;
 	private float idleTimer;
 	private float idleDuration;
-	private const int IDLETOP = 1, IDLEBOT = -1, IDLERIGHT = 2, IDLESLANTTOP = 3, IDLESLANTBOT = -3;
-	private float speedX = 1, speedY = -1;
 	public void Execute()
 	{
+		if (enemy.BotSide)
+		{
+			enemy.ChangeState(new WalkingRightState());
+		}
+		else
+		{
+			if (walkingBotTimer <= walkingBotDuration)
+			{
+				walkingBotTimer += Time.deltaTime * 2f;
+
+				//enemy.mRigidbody.velocity = new Vector2(enemy.speed * enemy.transform.localScale.x, -enemy.speed);
+				float speed = enemy.speed * Time.deltaTime;
+				enemy.transform.position += new Vector3(speed * enemy.transform.localScale.x, -speed, 0);
+			}
+			else
+			{
+				enemy.ChangeState(new WalkingBotState());
+			}
+			enemy.setChange2();
+
+		}
 
 		StartState();
+		if (enemy.equalVertical())
+		{
+			enemy.ChangeState(new WalkingRightState());
+		}
+		if (enemy.equalHorizontal())
+		{
+			enemy.ChangeState(new WalkingBotState());
+		}
 	}
 
 	public void Enter(Enemy enemy)
 	{
-		//idleDuration = UnityEngine.Random.Range(1, 10);
+		walkingBotDuration = UnityEngine.Random.Range(1, 5);;
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
+
 	}
 
 	public void Exit()

@@ -12,12 +12,7 @@ public class IdleTopSlantState : IEnemyState
 	private float speedX = 0, speedY = 0;
 	public void Execute()
 	{
-		//Idle(1);
 
-		//if (enemy.Target != null)
-		//{
-		//enemy.ChangeState(new PatrolState());
-		//}
 		StartState();
 	}
 
@@ -25,7 +20,7 @@ public class IdleTopSlantState : IEnemyState
 	{
 		//idleDuration = UnityEngine.Random.Range(1, 10);
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
+
 	}
 
 	public void Exit()

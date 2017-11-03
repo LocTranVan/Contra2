@@ -8,16 +8,22 @@ public class WalkingRightState : IEnemyState
 
 	private float idleTimer;
 	private float idleDuration;
-	private const int IDLETOP = 1, IDLEBOT = -1, IDLERIGHT = 2, IDLESLANTTOP = 3, IDLESLANTBOT = -3;
+	private float waitTime;
 	private float speedX = 1, speedY = 0;
 	public void Execute()
 	{
-		//Idle(1);
+		if (!enemy.BotSide)
+		{
+			enemy.ChangeState(new WalkingBotState());
+		}else
+		{
+			if ((enemy.RightSide && enemy.transform.localScale.x > 0) || (enemy.LeftSide && enemy.transform.localScale.x < 0))
+			{
+				enemy.ChangeDirection();
+			}
+			enemy.transform.position += new Vector3(enemy.speed * enemy.transform.localScale.x * Time.deltaTime, 0, 0);
+		}
 
-		//if (enemy.Target != null)
-		//{
-		//enemy.ChangeState(new PatrolState());
-		//}
 		StartState();
 	}
 
@@ -25,7 +31,7 @@ public class WalkingRightState : IEnemyState
 	{
 		//idleDuration = UnityEngine.Random.Range(1, 10);
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
+
 	}
 
 	public void Exit()

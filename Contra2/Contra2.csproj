@@ -87,6 +87,7 @@
     <Compile Include="Assets\_Scripts\Enemy\IdleTopSlantState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\IdleTopState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\IEnemyState.cs" />
+    <Compile Include="Assets\_Scripts\Enemy\ListEnemyArea2.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantBotState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantTopState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingBotState.cs" />

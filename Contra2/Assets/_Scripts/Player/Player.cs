@@ -27,33 +27,36 @@ public class Player : Character
 			onGround = true;
 		}
 	}
-	private void OnTriggerEnter2D(Collider2D collision)
+	public override void OnTriggerEnter2D(Collider2D collision)
 	{
-		collision.gameObject.SetActive(false);
+		//	collision.gameObject.SetActive(false);
 		camera.GetComponent<CameraMovement>().setMileStones();
 	}
 	private void FixedUpdate()
 	{
-		if (shooting)
+		if (!IsDead)
 		{
-			Shooting();
-			mAnimator.SetTrigger("Shoot");
-			shooting = false;
-		}
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+			if (shooting)
+			{
+				Shooting();
+				mAnimator.SetTrigger("Shoot");
+				shooting = false;
+			}
+			float h = Input.GetAxis("Horizontal");
+			float v = Input.GetAxis("Vertical");
 
-		Animating(h, v);
-		Move(h, v);
-		if (jump && onGround)
-		{
-			Jump();
-			onGround = !onGround;
-		}
+			Animating(h, v);
+			Move(h, v);
+			if (jump && onGround)
+			{
+				Jump();
+				onGround = !onGround;
+			}
 
-		if (h > 0 && !facingRight || h < 0 && facingRight)
-		{
-			ChangeDirection();
+			if (h > 0 && !facingRight || h < 0 && facingRight)
+			{
+				ChangeDirection();
+			}
 		}
 	}
 	void Animating(float h, float v)
@@ -76,6 +79,20 @@ public class Player : Character
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			jump = true;
+		}
+	}
+
+	public override void TakeDamage()
+	{
+		if (!IsDead)
+		{
+			health -= 1;
+			if (health == 0)
+				IsDead = true;
+		}
+		else
+		{
+			mAnimator.SetTrigger("Dead");
 		}
 	}
 }

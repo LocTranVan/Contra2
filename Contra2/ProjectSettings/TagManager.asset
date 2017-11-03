@@ -9,6 +9,8 @@ TagManager:
   - hello
   - LastMileStones
   - bullet
+  - Base Standing Sniper
+  - bulletEnemy
   layers:
   - Default
   - TransparentFX
@@ -20,10 +22,10 @@ TagManager:
   - 
   - Background
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Camera
+  - BulletEnemy
+  - BulletPlayer
+  - Player
   - 
   - 
   - 

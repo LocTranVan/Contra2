@@ -6,26 +6,42 @@ public class WalkingBotState : IEnemyState
 {
 	private Enemy enemy;
 
-	private float idleTimer;
-	private float idleDuration;
-	private const int IDLETOP = 1, IDLEBOT = -1, IDLERIGHT = 2, IDLESLANTTOP = 3, IDLESLANTBOT = -3;
+	private float walkingBotTimer;
+	private float walkingBotDuration;
+	//private float timeDelay;
 	private float speedX = 0, speedY = -1;
 	public void Execute()
 	{
-		//Idle(1);
-
-		//if (enemy.Target != null)
-		//{
-		//enemy.ChangeState(new PatrolState());
-		//}
+		if (enemy.BotSide)
+		{
+			enemy.ChangeState(new WalkingRightState());
+		}
+		else
+		{
+			if (walkingBotTimer <= walkingBotDuration)
+			{
+				walkingBotTimer += Time.deltaTime * 2f;
+	
+			}
+			else if(!enemy.equalHorizontal())
+			{
+				enemy.ChangeState(new SlantBotState());
+			}
+			enemy.setChange2();
+			if (enemy.equalVertical() && !enemy.equalHorizontal())
+			{
+				enemy.ChangeState(new WalkingRightState());
+			}
+		}
 		StartState();
+		enemy.transform.position += new Vector3(0, -enemy.speed * Time.deltaTime, 0);
+
 	}
 
 	public void Enter(Enemy enemy)
 	{
-		//idleDuration = UnityEngine.Random.Range(1, 10);
+		walkingBotDuration = UnityEngine.Random.Range(1, 4);
 		this.enemy = enemy;
-		enemy.setSpeed(speedX, speedY);
 	}
 
 	public void Exit()

@@ -13,25 +13,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SVertical
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Shoot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Nomal Layer
@@ -376,7 +376,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.67
   m_TransitionOffset: 0
   m_ExitTime: 0.9897849
   m_HasExitTime: 0
@@ -809,7 +809,7 @@ AnimatorStateMachine:
     m_Position: {x: 252, y: -36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102760063331403736}
-    m_Position: {x: 504, y: -36, z: 0}
+    m_Position: {x: 528, y: -48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102025294142885468}
     m_Position: {x: 252, y: 60, z: 0}
@@ -821,10 +821,10 @@ AnimatorStateMachine:
     m_Position: {x: 252, y: -276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102050006625089148}
-    m_Position: {x: 504, y: 60, z: 0}
+    m_Position: {x: 300, y: 144, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102857128223090330}
-    m_Position: {x: 504, y: -156, z: 0}
+    m_Position: {x: 360, y: -252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102760276313179552}
     m_Position: {x: -72, y: -156, z: 0}
@@ -833,7 +833,7 @@ AnimatorStateMachine:
     m_Position: {x: -60, y: -24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102090142762587016}
-    m_Position: {x: 768, y: -36, z: 0}
+    m_Position: {x: 792, y: -48, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101422030403664898}
