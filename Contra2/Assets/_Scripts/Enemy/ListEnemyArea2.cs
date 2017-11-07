@@ -5,6 +5,7 @@ using UnityEngine;
 public class ListEnemyArea2 : MonoBehaviour
 {
 	public List<GameObject> listBaseStandingSniper;
+	public float waitTime;
 	private List<GameObject> removeList;
 	public Transform Camera;
 	public float offSet;
@@ -23,7 +24,7 @@ public class ListEnemyArea2 : MonoBehaviour
 	//	RaycastHit2D hitStart = Physics2D.Raycast(new Vector2(endSpawPosition.position.x, endSpawPosition.position.y), Vector2.left, background);
 
 	//	Debug.Log(hitEnd.distance + " " + hitStart.distance);
-		coroutine = spawEnemy(5f);
+		coroutine = spawEnemy(waitTime);
 		StartCoroutine(coroutine);
 	}
 	
@@ -33,6 +34,7 @@ public class ListEnemyArea2 : MonoBehaviour
 		{
 			yield return new WaitForSeconds(time);
 			getPosition();
+			yield return new WaitForSeconds(1f);
 		}
 	}
 	private void getPosition()
@@ -42,12 +44,16 @@ public class ListEnemyArea2 : MonoBehaviour
 		if (hitStart.distance >= 5f)
 		{
 			Vector2 pos = new Vector2(Random.Range(startSpawPositon.position.x, startSpawPositon.position.x + 5f), startSpawPositon.position.y);
+			RaycastHit2D hit = Physics2D.Raycast(new Vector2(pos.x, pos.y), Vector2.down, background);
+			if(hit.distance >= 1f)
 			Instantiate(enemySolider, pos, Quaternion.identity);
 		}
 		if (hitEnd.distance >= 5f)
 		{
 			Vector2 pos = new Vector2(Random.Range(endSpawPosition.position.x - 5f, endSpawPosition.position.x), endSpawPosition.position.y);
-			Instantiate(enemySolider, pos, Quaternion.identity);
+			RaycastHit2D hit = Physics2D.Raycast(new Vector2(pos.x, pos.y), Vector2.down, background);
+			if (hit.distance >= 1f)
+				Instantiate(enemySolider, pos, Quaternion.identity);
 		}
 	
 	}
@@ -56,7 +62,7 @@ public class ListEnemyArea2 : MonoBehaviour
 	void Update()
 	{
 
-		if(numberActiveBSSniper != listBaseStandingSniper.Count)
+		//if(numberActiveBSSniper != listBaseStandingSniper.Count)
 			ActiveEnemy();
 	}
 	private void ActiveEnemy()
@@ -65,8 +71,8 @@ public class ListEnemyArea2 : MonoBehaviour
 
 			if (!enemy.active)
 			{
-				Vector2 pEnemy = new Vector2(0, enemy.transform.position.y);
-				Vector2 pCamera = new Vector2(0, Camera.position.y);
+				Vector2 pEnemy = new Vector2(enemy.transform.position.x, enemy.transform.position.y);
+				Vector2 pCamera = new Vector2(Camera.position.x, Camera.position.y);
 				if (Vector2.Distance(pEnemy, pCamera) <= offSet)
 				{
 					enemy.SetActive(true);

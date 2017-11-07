@@ -8,16 +8,25 @@ public class Player : Character
 	public GameObject camera;
 	Vector3 movement;              // The vector to store the direction of the player's movement.
 	Rigidbody2D playerRigidbody;
-
+	Collider2D playerCollider;
+	private SpriteRenderer spriteRenderer;
 	bool jump = false;
 	bool onGround = false;
+	float waitTime;
+	[SerializeField]
+	private int lives = 3;
+	
+	int fullHealth;
 	// Use this for initialization
 	void Awake()
 	{
 		playerRigidbody = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		playerCollider = GetComponent<Collider2D>();
 	}
 	void Start () {
 		base.Start();
+		fullHealth = health;
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -27,23 +36,13 @@ public class Player : Character
 			onGround = true;
 		}
 	}
-	public override void OnTriggerEnter2D(Collider2D collision)
-	{
-		//	collision.gameObject.SetActive(false);
-		camera.GetComponent<CameraMovement>().setMileStones();
-	}
 	private void FixedUpdate()
 	{
 		if (!IsDead)
 		{
-			if (shooting)
-			{
-				Shooting();
-				mAnimator.SetTrigger("Shoot");
-				shooting = false;
-			}
-			float h = Input.GetAxis("Horizontal");
-			float v = Input.GetAxis("Vertical");
+
+			float h = Input.GetAxisRaw("Horizontal");
+			float v = Input.GetAxisRaw("Vertical");
 
 			Animating(h, v);
 			Move(h, v);
@@ -57,13 +56,51 @@ public class Player : Character
 			{
 				ChangeDirection();
 			}
+			
+			if (invalid)
+				IndicateImmortal();
+			
 		}
+		
+		else if (invalid && (Time.time - waitTime) >= 2f)
+		{
+			reSetGame();
+			
+		}
+
+	}
+	private void IndicateImmortal()
+	{
+		if ((Time.time - waitTime) >= 6f)
+		{
+			invalid = false;
+			Physics2D.IgnoreLayerCollision(9, 12, false);
+			spriteRenderer.enabled = true;
+			return;
+		}
+			spriteRenderer.enabled = !spriteRenderer.enabled;
+	}
+	private void reSetGame()
+	{
+		//invalid = false;
+		IsDead = false;
+		health = fullHealth;
+	
+		if (mAnimator.isInitialized)
+				mAnimator.Rebind();
+		
 	}
 	void Animating(float h, float v)
 	{
 		mAnimator.SetFloat("SHorizontal", Mathf.Abs(h));
 		mAnimator.SetFloat("SVertical", v);
 		mAnimator.SetBool("Jump", jump);
+		if (shooting)
+		{
+			Shooting();
+			mAnimator.SetTrigger("Shoot");
+			shooting = false;
+		}
 	}
 
 	void Update()
@@ -84,15 +121,20 @@ public class Player : Character
 
 	public override void TakeDamage()
 	{
-		if (!IsDead)
+		if (!IsDead )
 		{
 			health -= 1;
 			if (health == 0)
+			{
 				IsDead = true;
-		}
-		else
-		{
-			mAnimator.SetTrigger("Dead");
+				lives--;
+				mAnimator.SetTrigger("Dead");
+				Physics2D.IgnoreLayerCollision(9, 12, true);
+				if(lives > 0) { 
+					invalid = true;
+					waitTime = Time.time;
+				}
+			}
 		}
 	}
 }

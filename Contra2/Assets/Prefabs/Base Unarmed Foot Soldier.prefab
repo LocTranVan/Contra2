@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61505256848881250}
   m_Layer: 9
   m_Name: Base Unarmed Foot Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -381,8 +381,8 @@ MonoBehaviour:
   movementSpeedX: 1
   movementSpeedY: 1
   jumpSpeed: 0
-  bulletSpeed: 300
-  bullet: {fileID: 1351242166548274, guid: e4524d2d0343a3444b35adeb2b5f0ca3, type: 2}
+  bullet: {fileID: 1276564144189764, guid: 677f3278037cb1946b6133186d5ef36d, type: 2}
+  defaultNameGun: 
   arrPositionGun:
   - {fileID: 4675080239565846}
   - {fileID: 4710585556289616}
@@ -392,14 +392,16 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4466057742909316, guid: e4524d2d0343a3444b35adeb2b5f0ca3,
     type: 2}
   damageSources:
-  - bullet
+  - NormalGun
   health: 1
   background:
     serializedVersion: 2
     m_Bits: 256
   speed: 2
   offSet: 0.6
+  numberOnceShoot: 0
   canMove: 1
+  canJump: 0
 --- !u!212 &212217325636144386
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -431,7 +433,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300014, guid: b9e1ce807be27044a9d552dbbb99e63a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

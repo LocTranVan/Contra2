@@ -24,16 +24,18 @@ public class SlantBotState : IEnemyState
 				//enemy.mRigidbody.velocity = new Vector2(enemy.speed * enemy.transform.localScale.x, -enemy.speed);
 				float speed = enemy.speed * Time.deltaTime;
 				enemy.transform.position += new Vector3(speed * enemy.transform.localScale.x, -speed, 0);
+
 			}
 			else
 			{
 				enemy.ChangeState(new WalkingBotState());
 			}
-			enemy.setChange2();
-
+			//	enemy.setChange2();
+			enemy.ChangeDirection();
 		}
-
+	
 		StartState();
+
 		if (enemy.equalVertical())
 		{
 			enemy.ChangeState(new WalkingRightState());
@@ -42,6 +44,7 @@ public class SlantBotState : IEnemyState
 		{
 			enemy.ChangeState(new WalkingBotState());
 		}
+
 	}
 
 	public void Enter(Enemy enemy)
@@ -64,8 +67,8 @@ public class SlantBotState : IEnemyState
 	public void StartState()
 	{
 		//	enemy.mAnimator.SetInt("Speed", speed);
-		enemy.mAnimator.SetInteger("Speed", -3);
-		enemy.mAnimator.SetFloat("SpeedX", 1);
+		enemy.mAnimator.SetFloat("Horizontal", 1);
+		enemy.mAnimator.SetFloat("Vertical", -1);
 
 	}
 }

@@ -12,18 +12,26 @@ public class WalkingRightState : IEnemyState
 	private float speedX = 1, speedY = 0;
 	public void Execute()
 	{
-		if (!enemy.BotSide)
+	
+		if (!enemy.BotSide && !enemy.equalVertical())
 		{
 			enemy.ChangeState(new WalkingBotState());
 		}else
 		{
-			if ((enemy.RightSide && enemy.transform.localScale.x > 0) || (enemy.LeftSide && enemy.transform.localScale.x < 0))
-			{
-				enemy.ChangeDirection();
+
+				if ((enemy.RightSide && enemy.transform.localScale.x > 0) || (enemy.LeftSide && enemy.transform.localScale.x < 0))
+				{
+					//	enemy.setChange2();
+					if(enemy.mRigidbody.gravityScale == 0)
+						enemy.transform.localScale = new Vector3(-enemy.transform.localScale.x, enemy.transform.localScale.y, 0);
+					else
+				{
+					enemy.ChangeState(new Jump());
+				}
 			}
 			enemy.transform.position += new Vector3(enemy.speed * enemy.transform.localScale.x * Time.deltaTime, 0, 0);
 		}
-
+	
 		StartState();
 	}
 
@@ -31,6 +39,7 @@ public class WalkingRightState : IEnemyState
 	{
 		//idleDuration = UnityEngine.Random.Range(1, 10);
 		this.enemy = enemy;
+	//	StartState();
 
 	}
 
@@ -47,8 +56,8 @@ public class WalkingRightState : IEnemyState
 	public void StartState()
 	{
 		//	enemy.mAnimator.SetInt("Speed", speed);
-		enemy.mAnimator.SetInteger("Speed", 2);
-		enemy.mAnimator.SetFloat("SpeedX", 1);
+		enemy.mAnimator.SetFloat("Horizontal", 1);
+		enemy.mAnimator.SetFloat("Vertical", 0);
 
 	}
 }

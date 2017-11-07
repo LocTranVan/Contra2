@@ -8,9 +8,15 @@ TagManager:
   - Milestones
   - hello
   - LastMileStones
-  - bullet
   - Base Standing Sniper
   - bulletEnemy
+  - Base Unarmed Foot Soldier
+  - Enemy
+  - NormalGun
+  - Tank
+  - FireballGun
+  - MachineGunPink
+  - MachineGunRed
   layers:
   - Default
   - TransparentFX
@@ -23,9 +29,9 @@ TagManager:
   - Background
   - Enemy
   - Camera
-  - BulletEnemy
-  - BulletPlayer
+  - Bullet
   - Player
+  - 
   - 
   - 
   - 

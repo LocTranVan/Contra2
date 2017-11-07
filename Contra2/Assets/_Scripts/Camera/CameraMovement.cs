@@ -13,7 +13,11 @@ public class CameraMovement : MonoBehaviour {
 	private bool milesStone = false;
 	private float distance;
 
+	private Vector3 newTarget;
+	private Vector3 currentPosition;
+	private bool block;
 	private float yMax, yMix;
+	private float startTime, journeyLength, speed;
 	private void Awake()
 	{
 
@@ -41,36 +45,58 @@ public class CameraMovement : MonoBehaviour {
 	void MoveCamera()
 	{
 		Vector3 position = transform.position;
-		if (position.x < player.transform.position.x)
+		
+		if (!block)
 		{
-			position.x += cameraSpeedX * Time.fixedDeltaTime;
+			if (position.y < player.transform.position.y)
+			{
+				position.y += cameraSpeedY * Time.fixedDeltaTime;
+			}
+			if (position.x < player.transform.position.x)
+			{
+				position.x += cameraSpeedX * Time.fixedDeltaTime;
+			}
+			transform.position = position;
 		}
-		if (position.y < player.transform.position.y)
-		{
-			position.y += cameraSpeedY * Time.fixedDeltaTime;
-		}
-
-
 		float distance = player.position.y - minPosition.position.y;
 
-		if (distance >= yMax)
+		if (block && (transform.position.y < newTarget.y))
 		{
-			position.y += cameraSpeedX * Time.fixedDeltaTime;
-
+			float distCovered = (Time.time - startTime) * speed;
+			float fracJourney = distCovered / journeyLength;
+			transform.position = Vector3.Lerp(currentPosition, newTarget, fracJourney);
+			if (position.x < player.transform.position.x)
+			{
+				position.x += cameraSpeedX * Time.fixedDeltaTime;
+			}
+			//Debug.Log(Vector3.Lerp(currentPosition, newTarget, fracJourney));
+			//position.y += cameraSpeedX * Time.fixedDeltaTime;
+			//position.y += cameraSpeedY * Time.fixedDeltaTime;
 		}
-
-		if(distance <= offset)
+		/*
+		else if (transform.position.y >= newTarget.y)
 		{
-			yMax = 2 * offset;
+			block = false;
 		}
+		*/
 
 
-		transform.position = position;
+
+
 	}
-	public void setMileStones()
+	public void setBlock(bool block)
 	{
-		yMax = yMax - offset / 2;
-	
+		this.block = block;
+	}
+	public void setMileStones(Vector3 position)
+	{
+		currentPosition = transform.position;
+		newTarget = new Vector3(transform.position.x, position.y, transform.position.z);
+		journeyLength = Vector3.Distance(currentPosition, newTarget);
+		startTime = Time.time;
+		speed = 2;
+		Debug.Log(currentPosition + " " + newTarget);
+
 	}
 
 }

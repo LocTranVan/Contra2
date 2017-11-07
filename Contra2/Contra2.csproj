@@ -78,23 +78,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\Boom.cs" />
     <Compile Include="Assets\_Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\_Scripts\Character.cs" />
+    <Compile Include="Assets\_Scripts\Enemy\Dead.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\_Scripts\Enemy\IdleBotSlantState.cs" />
-    <Compile Include="Assets\_Scripts\Enemy\IdleBotState.cs" />
-    <Compile Include="Assets\_Scripts\Enemy\IdleRightState.cs" />
-    <Compile Include="Assets\_Scripts\Enemy\IdleTopSlantState.cs" />
-    <Compile Include="Assets\_Scripts\Enemy\IdleTopState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\IEnemyState.cs" />
+    <Compile Include="Assets\_Scripts\Enemy\Jump.cs" />
     <Compile Include="Assets\_Scripts\Enemy\ListEnemyArea2.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantBotState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantTopState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingBotState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingRightState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingTopState.cs" />
+    <Compile Include="Assets\_Scripts\Gun.cs" />
+    <Compile Include="Assets\_Scripts\Helper.cs" />
+    <Compile Include="Assets\_Scripts\ManagerGun.cs" />
     <Compile Include="Assets\_Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
+    <Compile Include="Assets\_Scripts\Tank.cs" />
+    <Compile Include="Assets\_Scripts\test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

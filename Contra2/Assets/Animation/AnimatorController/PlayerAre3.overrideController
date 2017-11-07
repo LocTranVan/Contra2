@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PlayerAre3
+  m_Controller: {fileID: 9100000, guid: 1be07456c2db9d844837f91c55fade12, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c57ec61574392aa43ab486d50b8d9786, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c57ec61574392aa43ab486d50b8d9786, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17f1ce87a0f679c41ba9764601a0a02f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 17f1ce87a0f679c41ba9764601a0a02f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7f8132fac18c22542bf8d219a026ed96, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f8132fac18c22542bf8d219a026ed96, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 73161af89dcc91642bbc332bb8c9efb6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 73161af89dcc91642bbc332bb8c9efb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ba2a58329df1cdd4580df6c3a882a502, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ba2a58329df1cdd4580df6c3a882a502, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 58a4f2e3014686745bcae20b5c6dfb37, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 58a4f2e3014686745bcae20b5c6dfb37, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 397380636d7ec93419fba3a48a79f2d2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 397380636d7ec93419fba3a48a79f2d2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3a8a3228b4fad9e49bbed66a0c792780, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a8a3228b4fad9e49bbed66a0c792780, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17b2906767b6b6042a030d15130608c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 17b2906767b6b6042a030d15130608c2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: afb54260641cd2246af42f32db2ab606, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: afb54260641cd2246af42f32db2ab606, type: 2}

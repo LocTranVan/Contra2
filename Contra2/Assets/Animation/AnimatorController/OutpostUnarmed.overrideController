@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: OutpostUnarmed
+  m_Controller: {fileID: 9100000, guid: bdad5db78c287454e9c7413c95103a22, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: eea20d1d21279bd4c8ce61f9b592c461, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1f44a79f724911d42948c88b6355f926, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0daff64a3fcb9b345a67e510c2f15e60, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0daff64a3fcb9b345a67e510c2f15e60, type: 2}
