@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4621c558ddf60f641b23f9f1276ac620
+timeCreated: 1510115443
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Super Contra NES
+  fontNames:
+  - Super Contra NES
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

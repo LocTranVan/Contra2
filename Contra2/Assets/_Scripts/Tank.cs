@@ -74,8 +74,8 @@ public class Tank : MonoBehaviour {
 			{
 				Camera.GetComponent<CameraMovement>().setBlock(false);
 				Debug.Log("here");
-				
-				GameManager.instance.LoadScene(0);
+
+				GameManager.instance.LoadArea();
 				Destroy(gameObject); 
 			}
 			foreach(Transform tranform in gameObject.GetComponentsInChildren(typeof(Transform), true))

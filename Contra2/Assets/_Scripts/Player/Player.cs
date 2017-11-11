@@ -51,6 +51,15 @@ public class Player : Character
 		base.Start();
 		audioSource = GetComponent<AudioSource>();
 		fullHealth = health;
+
+		init();
+	}
+	private void init()
+	{
+		lives = GameManager.instance.lives;
+		bullet = GameManager.instance.Bullet;
+		liveForever = GameManager.instance.immortal;
+
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -164,6 +173,7 @@ public class Player : Character
 	{
 		jump = true;
 	}
+	
 	public void setBullet(GameObject bullet)
 	{
 		audioSource.PlayOneShot(item);
@@ -188,6 +198,7 @@ public class Player : Character
 	public void setSocre(int score)
 	{
 		Score = Score + score;
+		GameManager.instance.Score = Score;
 		Debug.Log(Score);
 	}
 	public override void TakeDamage()
@@ -199,6 +210,8 @@ public class Player : Character
 			{
 				IsDead = true;
 				lives--;
+				GameManager.instance.lives = lives;
+
 				mAnimator.ResetTrigger("Jump");
 				mAnimator.SetTrigger("Dead");
 				audioSource.PlayOneShot(Dead);

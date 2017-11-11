@@ -6,9 +6,33 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
+	public GameObject defaultBullet;
 	public static GameManager instance = null;
 	private int level = 1;
 	private string[] scenePaths = { "Area1", "Area2", "Area3" };
+	private int currentArea;
+	
+	public int lives
+	{
+		get; set;
+		
+	}
+	public GameObject Bullet
+	{
+		get; set;
+	}
+	public bool immortal
+	{
+		get; set;
+	}
+	public int Score
+	{
+		get; set;
+	}
+	public int numberSolider
+	{
+		get; set;
+	}
 	void Start () {
 		
 		if (instance == null)
@@ -19,10 +43,15 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 	}
-	public void LoadScene(int i)
+	public void LoadArea()
 	{
-		Debug.Log("here");
-		SceneManager.LoadScene(scenePaths[i]);
+		//Debug.Log("here");
+		SceneManager.LoadScene(scenePaths[currentArea]);
+		currentArea++;
+	}
+	public void setCurrentArea(int newCurrent)
+	{
+		currentArea = newCurrent;
 	}
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
 	static public void CallbackInitialization()
@@ -32,15 +61,21 @@ public class GameManager : MonoBehaviour {
 	static private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
 	{
 		instance.level++;
-		instance.InitGame();
+		//instance.InitGame();
+		instance.InitGameOffLine();
 	}
 
-
+	
 	//Initializes the game for each level.
 	void InitGame()
 	{
-		// Update is called once per frame
-		
-		
+		LoadArea();	
+	}
+	void InitGameOffLine()
+	{
+		lives = 3;
+		Bullet = defaultBullet;
+		immortal = false;
+		LoadArea();
 	}
 }
