@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PreGameData : MonoBehaviour {
-    public int life;
+    public int live;
     public string bulletType;
 
     void Awake ()

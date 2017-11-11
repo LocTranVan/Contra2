@@ -32,6 +32,7 @@ public class MenuHandler : MonoBehaviour {
     private DatabaseReference reference;
     public GameObject loginPanel, playPanel, topBarPanel, icon;
     public Text showLoginButton, coinText;
+    public Button toOfflineBtn;
     
 
     private void Awake()
@@ -41,7 +42,8 @@ public class MenuHandler : MonoBehaviour {
         passwordInputField.inputType = InputField.InputType.Password;
 
         //init null player
-        PlayerPrefs.SetString("uid", "");
+        PlayerPrefs.SetString(RefDefinition.UID, "");
+        PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 1);
         topBarPanel.SetActive(false);
 
         Invoke("ShowPlayPanel", 2.5f);
@@ -66,7 +68,7 @@ public class MenuHandler : MonoBehaviour {
     {
         //show login panel
         //if logined, do notthing
-        if (PlayerPrefs.GetString("uid").Equals(""))
+        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
         {
             playPanel.SetActive(false);
             emailInputField.text = "";
@@ -124,6 +126,8 @@ public class MenuHandler : MonoBehaviour {
                 PlayerPrefs.SetString("email", newUser.Email);
                 //PlayerPrefs.SetString("display_name", newUser.DisplayName);
                 PlayerPrefs.SetString("uid", newUser.UserId);
+                PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 0);
+
                 ShowPlayPanel();
                 //writeNewUser(newUser.UserId, "tanphamanh", "tanpham@example.com", 20);
                 InitTopBar();
@@ -134,13 +138,15 @@ public class MenuHandler : MonoBehaviour {
     public void ShowPlayPanel()
     {
         loginPanel.SetActive(false);
-        if (PlayerPrefs.GetString("uid").Equals(""))
+        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
         {
             //not login jet
+            toOfflineBtn.gameObject.SetActive(false);
             showLoginButton.text = "Login";
         }
         else
         {
+            toOfflineBtn.gameObject.SetActive(true);
             showLoginButton.text = "Hi " + PlayerPrefs.GetString("email");
         }
         playPanel.SetActive(true);
@@ -172,5 +178,18 @@ public class MenuHandler : MonoBehaviour {
                 coinText.text = snapshot.Value.ToString();
             }
         });
+    }
+
+    public void play()
+    {
+
+    }
+
+    public void logout()
+    {
+        auth.SignOut();
+        PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 1);
+        ShowPlayPanel();
+        topBarPanel.SetActive(false);
     }
 }
