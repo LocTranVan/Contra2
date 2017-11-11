@@ -6,12 +6,14 @@ public class Gun : MonoBehaviour {
 	//SetUp for Gun
 	public Transform[] positionGun;
 	//public Transform Father;
-	public float waitTimeOnceFire;
+	public float waitTimeOnceFire, waitTimeOnceBullet;
 	public int numberBulletOnceShoot;
 	public GameObject bullet;
 	public bool canTranform;
 	public bool canRotate;
+	public bool canChangeImage;
 	public float jerkOnceShoot;
+	public Sprite[] sprite;
 	//public float rangeShoot;
 
 	private Transform Target;
@@ -21,18 +23,20 @@ public class Gun : MonoBehaviour {
 	private float journeyTranform, startTimeShoot;
 	private float speedBulletX, speedBulletY;
 	private bool Shooting;
+	private SpriteRenderer mSpriteRenderer;
 	//private bool Effect;
-	private Vector3 DOWN = new Vector3(0, 0, 0), RIGHT = new Vector3(0, 0, 90), SLANTBOT = new Vector3(0, 0, 45), 
-		TOP = new Vector3(0, 0, 180), SLANTTOP = new Vector3(0, 0, 135), LEFT = new Vector3(0, 0, 270), UPSIDETOP = new Vector3(0, 0, 230),
-		UPSIDEBOT = new Vector3(0, 0, -45);
+	private Vector3 DOWN = new Vector3(0, 0, 0), RIGHT = new Vector3(0, 0, 90), SLANTBOT = new Vector3(0, 0, 45),
+		TOP = new Vector3(0, 0, 180), SLANTTOP = new Vector3(0, 0, 135), LEFT = new Vector3(0, 0, 270);
 	// Use this for initialization
 	void Start () {
 		Target = GameObject.Find("Player").transform;
-		//Debug.Log(Target.position);
+
+		mSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 		init();
 
 		coroutine = Shoot(waitTimeOnceFire);
 		StartCoroutine(coroutine);
+
 
 	}
 	private void init()
@@ -40,6 +44,19 @@ public class Gun : MonoBehaviour {
 		startTranform = transform.localScale;
 		endTranform = new Vector3(startTranform.x, startTranform.y - jerkOnceShoot, startTranform.z);
 		journeyTranform = Vector3.Distance(startTranform, endTranform);
+	
+		if (canChangeImage)
+		{
+			StartCoroutine(ChangeSprite(0.5f));
+		}
+	}
+	private IEnumerator ChangeSprite(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+		mSpriteRenderer.sprite = sprite[0];
+
+		yield return new WaitForSeconds(waitTime);
+		mSpriteRenderer.sprite = sprite[1];
 	}
 	private void FixedUpdate()
 	{
@@ -68,7 +85,6 @@ public class Gun : MonoBehaviour {
 	private void Rotate()
 	{
 		Vector2 targetDir = Assets._Scripts.Helper.getIntance().GetDirection(transform.position - Target.position, 1f);
-		Debug.Log(targetDir);
 		if (targetDir.x == 1 && targetDir.y == 0)
 		{
 			transform.eulerAngles = RIGHT;
@@ -77,11 +93,6 @@ public class Gun : MonoBehaviour {
 		if (targetDir.x == -1 && targetDir.y == 0)
 		{
 			transform.eulerAngles = LEFT;
-			return;
-		}
-		if (targetDir.x == -1)
-		{
-			transform.eulerAngles = (targetDir.y == -1) ? UPSIDEBOT : UPSIDETOP;
 			return;
 		}
 		if (targetDir.x == 0)
@@ -147,12 +158,39 @@ public class Gun : MonoBehaviour {
 
 					bullets.GetComponent<Bullet>().setSpeed(directionBullet);
 
-						startTimeShoot = Time.time;
+					startTimeShoot = Time.time;
 					Shooting = true;
 				}
 			}
-				yield return new WaitForSeconds(0.2f);
+				yield return new WaitForSeconds(waitTimeOnceBullet);
 
+			}
+		}
+	}
+	public void Nem()
+	{
+		for (int i = 0; i < numberBulletOnceShoot; i++)
+		{
+			foreach (Transform pGun in positionGun)
+			{
+				if (pGun != null)
+				{
+					GameObject bullets = Instantiate(bullet, pGun.position, Quaternion.identity);
+					if (pGun.gameObject.GetComponent<SpriteRenderer>() != null)
+					{
+						bool Effect = false;
+						StartCoroutine(EffectShoot(pGun.gameObject, Effect));
+
+					}
+					bullets.GetComponent<Bullet>().setTagShoot(gameObject.tag);
+					//bullets.GetComponent<Bullet>().setSpeed(getForceGun(pGun.gameObject.name));
+					Vector2 directionBullet = (canRotate) ? Assets._Scripts.Helper.getIntance().GetDirection(transform.position - Target.position, 1f) :
+						Assets._Scripts.Helper.getIntance().GetDirection(transform.position - pGun.position, 0.2f);
+
+					bullets.GetComponent<Bullet>().setSpeed(directionBullet);
+
+					Shooting = true;
+				}
 			}
 		}
 	}
@@ -168,17 +206,7 @@ public class Gun : MonoBehaviour {
 
 	}
 	
-	/**
-	private Vector2 getForceGun(string name)
-	{
-		if (name.Contains("2") || name.Contains("3"))
-		{
-			 speed = (name.Contains("2")) ? new Vector2(-0.2f, -1) : new Vector2(0.2f, -1);
-		
-		}
-		return speed;
-	}
-	*/
+
 	// Update is called once per frame
 	void Update () {
 		

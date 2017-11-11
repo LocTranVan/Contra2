@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class Player : Character
 {
+	private static Player instance;
+	public AudioClip shoot, Dead, item;
+	private AudioSource audioSource;
+	public static Player Instance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				instance = GameObject.FindObjectOfType<Player>();
+			}
+			return instance;
+		}
+	}
 	private bool shooting = false;
 	public GameObject camera;
 	Vector3 movement;              // The vector to store the direction of the player's movement.
@@ -15,25 +29,43 @@ public class Player : Character
 	float waitTime;
 	[SerializeField]
 	private int lives = 3;
-	
+	public bool liveForever;
 	int fullHealth;
+	private int Score;
+	private ETCJoystick eTCJoystick;
+	private bool blockgravity;
 	// Use this for initialization
 	void Awake()
 	{
 		playerRigidbody = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		playerCollider = GetComponent<Collider2D>();
+
+		eTCJoystick = FindObjectOfType<ETCJoystick>();
+		if (playerRigidbody.gravityScale == 0)
+		{
+			blockgravity = true;
+		}
 	}
 	void Start () {
 		base.Start();
+		audioSource = GetComponent<AudioSource>();
 		fullHealth = health;
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Background")
+		if (!blockgravity && collision.gameObject.tag == "Background")
 		{
 			jump = false;
 			onGround = true;
+			mRigidbody.gravityScale = 0;
+		}
+	}
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (!blockgravity && collision.gameObject.tag == "Background")
+		{
+			mRigidbody.gravityScale = 1;
 		}
 	}
 	private void FixedUpdate()
@@ -41,8 +73,10 @@ public class Player : Character
 		if (!IsDead)
 		{
 
-			float h = Input.GetAxisRaw("Horizontal");
-			float v = Input.GetAxisRaw("Vertical");
+			//float h = Input.GetAxisRaw("Horizontal");
+			//float v = Input.GetAxisRaw("Vertical");
+			float h = ETCInput.GetAxis("Horizontal");
+			float v = ETCInput.GetAxis("Vertical");
 
 			Animating(h, v);
 			Move(h, v);
@@ -71,7 +105,7 @@ public class Player : Character
 	}
 	private void IndicateImmortal()
 	{
-		if ((Time.time - waitTime) >= 6f)
+		if ((Time.time - waitTime) >= 6f && !liveForever)
 		{
 			invalid = false;
 			Physics2D.IgnoreLayerCollision(9, 12, false);
@@ -85,7 +119,7 @@ public class Player : Character
 		//invalid = false;
 		IsDead = false;
 		health = fullHealth;
-	
+		bullet = defaultBullets;
 		if (mAnimator.isInitialized)
 				mAnimator.Rebind();
 		
@@ -111,14 +145,51 @@ public class Player : Character
 	{
 		if (Input.GetKeyDown(KeyCode.F))
 		{
-			shooting = true;
+			Shoot();
 		}
+
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			jump = true;
+			JumpUp();
+
 		}
 	}
+	public void Shoot()
+	{
+		mAnimator.ResetTrigger("Shoot");
+		audioSource.PlayOneShot(shoot);
+		shooting = true;
+	}
+	public void JumpUp()
+	{
+		jump = true;
+	}
+	public void setBullet(GameObject bullet)
+	{
+		audioSource.PlayOneShot(item);
+		this.bullet = bullet;
 
+	}
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.tag == "Milestones")
+		{
+			GameObject camera = GameObject.Find("Main Camera");
+			//camera.GetComponent<CameraMovement>().setMileStones(other.transform.position);
+		//	camera.GetComponent<CameraMovement>().setBlock(false);
+		}
+
+		if (other.tag == "UnderWater" )
+		{
+
+			mAnimator.SetLayerWeight(1, 0);
+		}
+	}
+	public void setSocre(int score)
+	{
+		Score = Score + score;
+		Debug.Log(Score);
+	}
 	public override void TakeDamage()
 	{
 		if (!IsDead )
@@ -128,7 +199,9 @@ public class Player : Character
 			{
 				IsDead = true;
 				lives--;
+				mAnimator.ResetTrigger("Jump");
 				mAnimator.SetTrigger("Dead");
+				audioSource.PlayOneShot(Dead);
 				Physics2D.IgnoreLayerCollision(9, 12, true);
 				if(lives > 0) { 
 					invalid = true;

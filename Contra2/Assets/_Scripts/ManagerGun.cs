@@ -45,6 +45,7 @@ namespace Assets._Scripts
 		{
 			switch (Gun)
 			{
+				
 				case NormalGun:
 					return 5;
 				case FireballGun:
@@ -52,9 +53,10 @@ namespace Assets._Scripts
 				case MachineGunPink:
 					return 5.7f;
 				case MachineGunRed:
-					return 5.7f;
+					return 10f;
 				default:
 					return 30;
+				
 			}
 		}
 		public int getNumberBulletOnceShoot(String Gun)
@@ -81,7 +83,7 @@ namespace Assets._Scripts
 				case FireballGun:
 					return 4;
 				case MachineGunRed:
-					return 6;
+					return 2;
 				default:
 					return 30;
 			}

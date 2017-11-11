@@ -28,7 +28,8 @@ public class WalkingRightState : IEnemyState
 				{
 					enemy.ChangeState(new Jump());
 				}
-			}
+				}
+
 			enemy.transform.position += new Vector3(enemy.speed * enemy.transform.localScale.x * Time.deltaTime, 0, 0);
 		}
 	
@@ -45,7 +46,9 @@ public class WalkingRightState : IEnemyState
 
 	public void Exit()
 	{
-
+		enemy.mAnimator.SetFloat("Horizontal", 0);
+		enemy.mAnimator.SetFloat("Vertical", 0);
+		enemy.mAnimator.ResetTrigger("Jump");
 	}
 
 	public void OnTriggerEnter(Collider2D other)

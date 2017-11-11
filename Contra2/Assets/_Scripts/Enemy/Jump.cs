@@ -16,7 +16,7 @@ public class Jump : IEnemyState
 
 		StartState();
 		enemy.transform.position += new Vector3(enemy.transform.localScale.x * enemy.speed * Time.deltaTime, enemy.speed * Time.deltaTime * 5, 0);
-		if (enemy.BotSide)
+		if (enemy.RightSide || enemy.BotSide)
 		{
 			enemy.ChangeState(new WalkingRightState());
 		}
@@ -33,7 +33,9 @@ public class Jump : IEnemyState
 
 	public void Exit()
 	{
-
+		enemy.mAnimator.SetFloat("Horizontal", 0);
+		enemy.mAnimator.SetFloat("Vertical", 0);
+		enemy.mAnimator.ResetTrigger("Jump");
 	}
 
 	public void OnTriggerEnter(Collider2D other)
