@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114020469566694178}
   - component: {fileID: 50281410799554542}
   - component: {fileID: 61720015462556298}
+  - component: {fileID: 82501813658629396}
   m_Layer: 9
   m_Name: Outpost Unarmed Foot Soldier
   m_TagString: Enemy
@@ -173,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1227117106314872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.67, y: -9.67, z: -1}
+  m_LocalPosition: {x: -63.63, y: -6.25, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4035810643914004}
@@ -341,7 +342,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1.6}
+    oldSize: {x: 0.96666664, y: 1.6}
     newSize: {x: 0.6, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -350,6 +351,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.85, y: 1.35}
   m_EdgeRadius: 0
+--- !u!82 &82501813658629396
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227117106314872}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95186903437491116
 Animator:
   serializedVersion: 3
@@ -382,25 +463,26 @@ MonoBehaviour:
   movementSpeedY: 1
   jumpSpeed: 0
   bullet: {fileID: 0}
-  defaultNameGun: 
   arrPositionGun:
   - {fileID: 4035810643914004}
   - {fileID: 4783814784919386}
   - {fileID: 4369883562500942}
   - {fileID: 4725063925043116}
   - {fileID: 4151702740261152}
-  bulletSpawn: {fileID: 0}
   damageSources:
   - NormalGun
   health: 1
   background:
     serializedVersion: 2
     m_Bits: 256
+  shoot: {fileID: 0}
+  Dead: {fileID: 8300000, guid: 6aa93e227be350e4a9868e7259d12702, type: 3}
   speed: 2
   offSet: 0.6
   numberOnceShoot: 0
   canMove: 1
   canJump: 0
+  canShoot: 0
 --- !u!212 &212181982598095006
 SpriteRenderer:
   m_ObjectHideFlags: 1

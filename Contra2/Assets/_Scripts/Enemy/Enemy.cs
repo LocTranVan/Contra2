@@ -6,9 +6,10 @@ using UnityEngine;
 public class Enemy : Character {
 
 	// Use this for initialization
-	private Transform Target;
+	private Transform Target, Camera;
 	public LayerMask background;
-
+	public AudioClip shoot, Dead;
+	private AudioSource audioSource;
 	private Vector3 rightFoot, leftFoot, rightHead, leftHead;
 	public float speed;
 	public float offSet;
@@ -19,7 +20,8 @@ public class Enemy : Character {
 	private float waitTime;
 	private IEnumerator coroutine;
 	private Vector2 currentDirection;
-	public bool canMove, canJump;
+	private Collider2D collider;
+	public bool canMove, canJump, canShoot;
 	private float timeChange;
 	void Start() {
 		base.Start();
@@ -32,12 +34,16 @@ public class Enemy : Character {
 		{
 
 			mAnimator.SetLayerWeight(1, 0);
-
-			coroutine = Shoot(1f);
-			StartCoroutine(coroutine);
+			if (canShoot) {
+				coroutine = Shoot(1f);
+				StartCoroutine(coroutine);
+			}
+	
 		}
 		Target = GameObject.Find("Player").transform;
-
+		Camera = GameObject.Find("Main Camera").transform;
+		collider = gameObject.GetComponent<Collider2D>();
+		audioSource = GetComponent<AudioSource>();
 		//Debug.Log(rightFoot - transform.position);
 		//	//Debug.Log("rightFoot" + rightFoot.position);
 		//	Debug.Log("leftFoot" + leftFoot.position);
@@ -68,6 +74,7 @@ public class Enemy : Character {
 			}
 		}
 	}
+	
 	private void checkHit()
 	{
 		rightFoot = transform.position - new Vector3(0.42f, 0.8f, 0);
@@ -130,10 +137,14 @@ public class Enemy : Character {
 		}
 	}
 
-	
+	public void Nem()
+	{
+		GameObject bullets = Instantiate(bullet, arrPositionGun[0].position, Quaternion.identity);
+		bullets.GetComponent<Bullet>().setTagShoot(gameObject.tag);
+	}
 	private void conditionDesTroy()
 	{
-		if(transform.position.y <= (Target.position.y - 6f) || transform.position.x <= (Target.position.x - 6f))
+		if(transform.position.y <=  (Target.position.y - 6f) || Mathf.Abs (transform.position.x - Camera.position.x) >= 10f)
 		{
 			Destroy(gameObject);
 		}
@@ -148,8 +159,18 @@ public class Enemy : Character {
 			if (health <= 0)
 			{
 				IsDead = true;
+				if (!canMove)
+				{
+					mAnimator.SetFloat("Horizontal", 0);
+					mAnimator.SetFloat("Vertical", 0);
+					mAnimator.ResetTrigger("Jump");
+				}
+				
 				ChangeState(new Dead());
-				mAnimator.SetBool("Dead", true);
+				audioSource.PlayOneShot(Dead);
+				if(health == 0)
+					Player.Instance.GetComponent<Player>().setSocre(1);
+				//	mAnimator.SetBool("Dead", true);
 			}
 		}
 	}
@@ -157,6 +178,10 @@ public class Enemy : Character {
 	{
 	//	Debug.Log("Booom");
 		Destroy(gameObject);
+	}
+	public void SetTrigger()
+	{
+		collider.enabled = !collider.enabled;
 	}
 	public void setChange2()
 	{

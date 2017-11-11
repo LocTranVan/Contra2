@@ -17,6 +17,11 @@ TagManager:
   - FireballGun
   - MachineGunPink
   - MachineGunRed
+  - Jungle Ground Turret
+  - UnderWater
+  - Undefined
+  - Boss
+  - Gift
   layers:
   - Default
   - TransparentFX
@@ -31,7 +36,7 @@ TagManager:
   - Camera
   - Bullet
   - Player
-  - 
+  - Gift
   - 
   - 
   - 

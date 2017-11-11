@@ -1,0 +1,228 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:Temp\Assembly-CSharp.dll
+-unsafe
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:Assets/Firebase/Plugins/Firebase.App.dll
+-r:Assets/Firebase/Plugins/Firebase.Auth.dll
+-r:Assets/Firebase/Plugins/Firebase.Database.dll
+-r:Assets/Firebase/Plugins/Google.MiniJson.dll
+-r:Assets/Firebase/Plugins/Google.Sharpen.dll
+-r:Assets/Parse/Plugins/Unity.Compat.dll
+-r:Assets/Parse/Plugins/Unity.Tasks.dll
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_1_1
+-define:UNITY_2017_1
+-define:UNITY_2017
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_GENERICS
+-define:ENABLE_PVR_GI
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_RUNTIME_NAVMESH_BUILDING
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_NATIVE_ARRAY
+-define:ENABLE_SPRITE_MASKING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_VIDEO
+-define:ENABLE_RMGUI
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_STYLE_SHEETS
+-define:PLATFORM_ANDROID
+-define:UNITY_ANDROID
+-define:UNITY_ANDROID_API
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_EGL
+-define:ENABLE_NETWORK
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:PLATFORM_SUPPORTS_ADS_ID
+-define:UNITY_CAN_SHOW_SPLASH_SCREEN
+-define:ENABLE_VR
+-define:ENABLE_UNITYADS_RUNTIME
+-define:UNITY_UNITYADS_API
+-define:ENABLE_MONO
+-define:NET_2_0_SUBSET
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_NATIVE_ARRAY_CHECKS
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+-define:UNITY_HAS_GOOGLEVR
+Assets/_Scripts/Boom.cs
+Assets/_Scripts/Camera/CameraMovement.cs
+Assets/_Scripts/Character.cs
+Assets/_Scripts/ControlStones.cs
+Assets/_Scripts/Enemy/Boss.cs
+Assets/_Scripts/Enemy/Dead.cs
+Assets/_Scripts/Enemy/Enemy.cs
+Assets/_Scripts/Enemy/IEnemyState.cs
+Assets/_Scripts/Enemy/Jump.cs
+Assets/_Scripts/Enemy/ListEnemyArea2.cs
+Assets/_Scripts/Enemy/SlantBotState.cs
+Assets/_Scripts/Enemy/SlantTopState.cs
+Assets/_Scripts/Enemy/Swimming.cs
+Assets/_Scripts/Enemy/WalkingBotState.cs
+Assets/_Scripts/Enemy/WalkingRightState.cs
+Assets/_Scripts/Enemy/WalkingTopState.cs
+Assets/_Scripts/GameManager.cs
+Assets/_Scripts/GodGift.cs
+Assets/_Scripts/Gun.cs
+Assets/_Scripts/Helper.cs
+Assets/_Scripts/ItemPrice.cs
+Assets/_Scripts/ManagerGun.cs
+Assets/_Scripts/MenuHandler.cs
+Assets/_Scripts/MoveTheoYeuCau.cs
+Assets/_Scripts/Parabol.cs
+Assets/_Scripts/Player/Bullet.cs
+Assets/_Scripts/Player/Player.cs
+Assets/_Scripts/PreGameData.cs
+Assets/_Scripts/PreGameHandler.cs
+Assets/_Scripts/RefDefinition.cs
+Assets/_Scripts/SpawTheoNhuCau.cs
+Assets/_Scripts/Tank.cs
+Assets/_Scripts/WalkingShootBehaivior.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/AutoSelect/MultiLayerTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/AutoSelect/MultiLayerUI.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/MultiCamera/MultiCameraTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/MultiCamera/MultiCameraUI.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RTSExample/CubeSelect.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RTSExample/RTSCamera.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/Ball.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/BallRunPlayer.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/ThirdPersonCamera.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/LoadExamples.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/MultiFinger/FingerTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/MultiFinger/MutliFingersScreenTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/DoubleTapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/DragMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/LongTapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/Swipe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/TapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/TouchMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/PinchMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TooglePickMethodUI.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwistMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoDoubleTapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoDragMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoLongTapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoSwipe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoTapMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoTouchMe.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/ETWindow.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/GlobalEasyTouchEvent.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/UICompatibility.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/UIWindow.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UIDrag.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UIPinch.cs
+Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UITwist.cs
+"Assets/EasyTouchBundle/EasyTouch/Examples/5.X new features/Script/RTS_NewSyntaxe.cs"
+"Assets/EasyTouchBundle/EasyTouch/Examples/5.X new features/Script/SimpleActionExample.cs"
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/EasyTouchTrigger.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickBase.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickDrag.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickEnterOverExist.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickLongTap.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickPinch.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickSwipe.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTap.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTwist.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/BaseFinger.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/EasyTouch.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/EasyTouchInput.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/ECamera.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/Finger.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/Gesture.cs
+Assets/EasyTouchBundle/EasyTouch/Plugins/Engine/TwoFingerGesture.cs
+Assets/EasyTouchBundle/EasyTouchControls/Component/ETCSetDirectActionTransform.cs
+Assets/EasyTouchBundle/EasyTouchControls/Examples/_Medias/SliderText.cs
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Button-Event-Input/ButtonInputUI.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Button-Event-Input/ButtonUIEvent.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/ControlEventInput/ControlUIEvent.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/ControlEventInput/ControlUIInput.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/DPadClassicalTime/DPadParameterUI.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/FPSExample/FPSPlayerControl.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/FPSExample/ImpactEffect.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/JoystickParameter/AxisXUi.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/LoadLevelScript.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/TouchPad-Event-Input/TouchPadUIEvent.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/Script/CharacterAnimation.cs"
+"Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/Script/CharacterAnimationDungeon.cs"
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ComponentExtensions.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCArea.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCAxis.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCBase.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCButton.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCDPad.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCInput.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCJoystick.cs
+Assets/EasyTouchBundle/EasyTouchControls/Plugins/ETCTouchPad.cs
+Assets/Unity-Logs-Viewer/Reporter/MultiKeyDictionary.cs
+Assets/Unity-Logs-Viewer/Reporter/Reporter.cs
+Assets/Unity-Logs-Viewer/Reporter/ReporterGUI.cs
+Assets/Unity-Logs-Viewer/Reporter/ReporterMessageReceiver.cs
+Assets/Unity-Logs-Viewer/Reporter/Test/Rotate.cs
+Assets/Unity-Logs-Viewer/Reporter/Test/TestReporter.cs
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll"
+-sdk:unity

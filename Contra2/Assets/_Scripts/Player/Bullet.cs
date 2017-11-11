@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour {
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		speedBullet = Assets._Scripts.ManagerGun.getIntance().getSpeedBullet(nameGun);
 		rangeShoot = Assets._Scripts.ManagerGun.getIntance().getRangeShoot(nameGun);
+		
 	}
 	
 	// Update is called once per frame
@@ -36,8 +37,13 @@ public class Bullet : MonoBehaviour {
 			transform.position += new Vector3(speedX * speedB, speedY * speedB, 0);
 			if (Vector2.Distance(startPosition, transform.position) >= rangeShoot)
 			{
-				animator.SetTrigger("Hit");
-				boom = true;
+				if (gameObject.tag == "Gift")
+					Destroy(gameObject);
+				else
+				{
+					animator.SetTrigger("Hit");
+					boom = true;
+				}
 			}
 		}
 	}
@@ -49,11 +55,15 @@ public class Bullet : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		
-		if(!boom && collision != null)
 			if(collision.gameObject.tag != nameTag)
 			{
-				animator.SetTrigger("Hit");
-				boom = true;
+			//		boom = true;
+			//	rigidbody2D.velocity = Vector2.zero;
+			//rigidbody2D.Sleep();
+					Animator anim = GetComponent<Animator>();
+					if(animator != null)
+		
+					animator.SetTrigger("Hit");
 			}
 		
 		
@@ -62,6 +72,10 @@ public class Bullet : MonoBehaviour {
 	{
 		this.speedX = speed.x;
 		this.speedY = speed.y;
+	}
+	public Vector2 getSpeed()
+	{
+		return new Vector2(speedX, speedY);
 	}
 	public void setTagShoot(string nameTag)
 	{

@@ -12,6 +12,8 @@ public class Dead : IEnemyState
 
 	public void Execute()
 	{
+		if(enemy.mRigidbody.gravityScale != 0) 
+		enemy.transform.position += new Vector3(-enemy.transform.localScale.x * enemy.speed * Time.deltaTime, enemy.speed * Time.deltaTime * 3, 0);
 		StartState();
 	}
 

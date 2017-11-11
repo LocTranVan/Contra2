@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>2017.1.2f1</UnityVersion>
+    <UnityVersion>2017.1.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_1;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -108,6 +108,8 @@
     <Compile Include="Assets\_Scripts\Boom.cs" />
     <Compile Include="Assets\_Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\_Scripts\Character.cs" />
+    <Compile Include="Assets\_Scripts\ControlStones.cs" />
+    <Compile Include="Assets\_Scripts\Enemy\Boss.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Dead.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\_Scripts\Enemy\IEnemyState.cs" />
@@ -115,21 +117,103 @@
     <Compile Include="Assets\_Scripts\Enemy\ListEnemyArea2.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantBotState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\SlantTopState.cs" />
+    <Compile Include="Assets\_Scripts\Enemy\Swimming.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingBotState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingRightState.cs" />
     <Compile Include="Assets\_Scripts\Enemy\WalkingTopState.cs" />
+    <Compile Include="Assets\_Scripts\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\GodGift.cs" />
     <Compile Include="Assets\_Scripts\Gun.cs" />
     <Compile Include="Assets\_Scripts\Helper.cs" />
     <Compile Include="Assets\_Scripts\ItemPrice.cs" />
     <Compile Include="Assets\_Scripts\ManagerGun.cs" />
     <Compile Include="Assets\_Scripts\MenuHandler.cs" />
+    <Compile Include="Assets\_Scripts\MoveTheoYeuCau.cs" />
+    <Compile Include="Assets\_Scripts\Parabol.cs" />
     <Compile Include="Assets\_Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Scripts\PreGameData.cs" />
     <Compile Include="Assets\_Scripts\PreGameHandler.cs" />
     <Compile Include="Assets\_Scripts\RefDefinition.cs" />
+    <Compile Include="Assets\_Scripts\SpawTheoNhuCau.cs" />
     <Compile Include="Assets\_Scripts\Tank.cs" />
-    <Compile Include="Assets\_Scripts\test.cs" />
+    <Compile Include="Assets\_Scripts\WalkingShootBehaivior.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerUI.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\MultiCamera\MultiCameraTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\MultiCamera\MultiCameraUI.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\GameExemple\RTSExample\CubeSelect.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\GameExemple\RTSExample\RTSCamera.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\GameExemple\RunBall\Ball.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\GameExemple\RunBall\BallRunPlayer.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\GameExemple\RunBall\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\LoadExamples.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\MultiFinger\FingerTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\MultiFinger\MutliFingersScreenTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\DoubleTapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\DragMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\LongTapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\Swipe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\TapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\OneFinger\TouchMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\PinchMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TooglePickMethodUI.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwistMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoDoubleTapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoDragMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoLongTapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoSwipe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoTapMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\SimpleExamples\TwoFingers\TwoTouchMe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UICompatibility\ETWindow.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UICompatibility\GlobalEasyTouchEvent.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UICompatibility\UICompatibility.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UICompatibility\UIWindow.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UITwistPinch\UIDrag.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UITwistPinch\UIPinch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\UnityUI\UITwistPinch\UITwist.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\5.X new features\Script\RTS_NewSyntaxe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\5.X new features\Script\SimpleActionExample.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\EasyTouchTrigger.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickBase.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickDrag.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickEnterOverExist.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickLongTap.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickPinch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickSwipe.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickTap.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Components\QuickTwist.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\BaseFinger.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\EasyTouch.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\EasyTouchInput.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\ECamera.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\Finger.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\Gesture.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Engine\TwoFingerGesture.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Component\ETCSetDirectActionTransform.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\_Medias\SliderText.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\Button-Event-Input\ButtonInputUI.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\Button-Event-Input\ButtonUIEvent.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\ControlEventInput\ControlUIEvent.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\ControlEventInput\ControlUIInput.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\DPadClassicalTime\DPadParameterUI.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\FPSExample\FPSPlayerControl.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\FPSExample\ImpactEffect.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\JoystickParameter\AxisXUi.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\LoadLevelScript.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 1.X\TouchPad-Event-Input\TouchPadUIEvent.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 2.X_New Features\Script\CharacterAnimation.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Version 2.X_New Features\Script\CharacterAnimationDungeon.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ComponentExtensions.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCArea.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCAxis.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCBase.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCButton.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCDPad.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCInput.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCJoystick.cs" />
+    <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
@@ -138,6 +222,13 @@
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\EasyTouchBundle\EasyTouch\How to migrate from EasyTouch 4.X.txt" />
+    <None Include="Assets\EasyTouchBundle\EasyTouch\RealseNotes.txt" />
+    <None Include="Assets\EasyTouchBundle\EasyTouch\_Documentation\How to migrate from EasyTouch 4.X.txt" />
+    <None Include="Assets\EasyTouchBundle\EasyTouchControls\Documentation\Version 2.0.txt" />
+    <None Include="Assets\EasyTouchBundle\EasyTouchControls\Issues in button behavior (MAC).txt" />
+    <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
+    <None Include="Assets\EasyTouchBundle\Readme.txt" />
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />
     <None Include="Assets\Firebase\Editor\AuthDependencies.xml" />
     <None Include="Assets\Firebase\Editor\FirebaseAuth_v4.2.1_manifest.txt" />
@@ -151,32 +242,6 @@
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.59.0.txt" />
     <None Include="Assets\Plugins\Android\Firebase\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\Firebase\res\values\google-services.xml" />
-    <None Include="Assets\Plugins\Android\firebase-analytics-impl-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-analytics-impl-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\firebase-analytics-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-analytics-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\firebase-app-unity-4.2.1\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-app-unity-4.2.1\R.txt" />
-    <None Include="Assets\Plugins\Android\firebase-app-unity-4.2.1\proguard.txt" />
-    <None Include="Assets\Plugins\Android\firebase-auth-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-auth-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\firebase-auth-unity-4.2.1\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-auth-unity-4.2.1\R.txt" />
-    <None Include="Assets\Plugins\Android\firebase-auth-unity-4.2.1\proguard.txt" />
-    <None Include="Assets\Plugins\Android\firebase-common-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-common-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-common-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\firebase-core-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-core-11.4.2\R.txt" />
-    <None Include="Assets\Plugins\Android\firebase-iid-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-iid-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\firebase-iid-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\play-services-base-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\play-services-base-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\play-services-basement-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\play-services-basement-license-11.4.2\third_party_licenses.txt" />
-    <None Include="Assets\Plugins\Android\play-services-tasks-license-11.4.2\AndroidManifest.xml" />
-    <None Include="Assets\Plugins\Android\play-services-tasks-license-11.4.2\third_party_licenses.txt" />
     <None Include="Assets\StreamingAssets\build_info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

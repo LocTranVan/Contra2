@@ -9,14 +9,15 @@ public abstract class Character : MonoBehaviour {
 
 	[SerializeField]
 	protected GameObject bullet;
-	[SerializeField]
-	private string defaultNameGun;
+
+	protected GameObject defaultBullets;
 
 	[SerializeField]
 	protected Transform[] arrPositionGun;
+	/*
 	[SerializeField]
 	protected Transform bulletSpawn;
-
+	*/
 	[SerializeField]
 	private List<string> damageSources;
 
@@ -53,10 +54,12 @@ public abstract class Character : MonoBehaviour {
 		get; set;
 	}
 	public abstract void TakeDamage();
-
+	private float speedX, speedY;
+	private Vector2 positionGun;
 	// Use this for initialization
 	public virtual void Start()
 	{
+		defaultBullets = bullet;
 		mAnimator = GetComponent<Animator>();
 		mRigidbody = GetComponent<Rigidbody2D>();
 		facingRight = true;
@@ -76,6 +79,8 @@ public abstract class Character : MonoBehaviour {
 		vInput = vInput * Time.deltaTime;
 		//mRigidbody.velocity = new Vector2 (hInput * movementSpeedX, (jumpSpeed == 0) ? vInput * movementSpeedY : mRigidbody.velocity.y);
 		transform.position += new Vector3(hInput * movementSpeedX, (jumpSpeed == 0) ? vInput * movementSpeedY : 0);
+		//Debug.Log(mRigidbody.gravityScale);
+	//	transform.position -= new Vector3(0, 1.2f * Time.deltaTime, 0);
 	}
 
 	public virtual void Jump()
@@ -88,33 +93,39 @@ public abstract class Character : MonoBehaviour {
 		//Debug.Log(other.tag);
 		if (damageSources.Contains(other.tag) && !invalid)
 		{
+			if(other.gameObject.layer == 11)
+			{
+				Destroy(other.gameObject);
+			}
 			TakeDamage();
 		}
 
 		if (other.tag == "Milestones" && gameObject.tag == "Player")
 		{
-			Debug.Log(other.transform.position);
+		//	Debug.Log(other.transform.position);
 			GameObject camera = GameObject.Find("Main Camera");
-			camera.GetComponent<CameraMovement>().setMileStones(other.transform.position);
-			camera.GetComponent<CameraMovement>().setBlock(true);
+			camera.GetComponent<CameraMovement>().setMileStones(new Vector3(0, other.transform.position.y, 0));
+			//camera.GetComponent<CameraMovement>().setBlock(true);
 		}
-			
-	}
-	public virtual void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.tag == "Milestones" && gameObject.tag == "Player")
+		if (other.tag == "UnderWater" )
 		{
-			Debug.Log(other.transform.position);
-			GameObject camera = GameObject.Find("Main Camera");
-			camera.GetComponent<CameraMovement>().setMileStones(other.transform.position);
-			camera.GetComponent<CameraMovement>().setBlock(false);
+
+		//	Debug.Log("Water" + mAnimator.GetLayerWeight(1));
+			if(gameObject.tag == "Player")
+				mAnimator.SetLayerWeight(1,  1);
+			else if(gameObject.tag == "Enemy")
+			{
+				gameObject.GetComponent<Enemy>().ChangeState(new Swimming());
+			}
 		}
 	}
+
 	public virtual void Shooting()
 	{
-		Vector2 positionGun = Vector2.zero;
+		positionGun = Vector2.zero;
 		float direc = transform.localScale.x;
-		float speedX = 0, speedY = 0;
+		speedX = 0;
+		speedY = 0;
 
 		if (mAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Top"))
 		{

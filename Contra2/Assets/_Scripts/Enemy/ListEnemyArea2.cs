@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ListEnemyArea2 : MonoBehaviour
 {
+	public List<GameObject> Gift;
 	public List<GameObject> listBaseStandingSniper;
-	public float waitTime;
+	public List<Transform> listPositionSpaw;
+	public float waitTime, waitTimeSpaw;
 	private List<GameObject> removeList;
 	public Transform Camera;
 	public float offSet;
+	public bool checkRayCast;
 	private int numberActiveBSSniper = 0;
 	public Transform startSpawPositon, endSpawPosition;
 	public GameObject enemySolider;
 	private IEnumerator coroutine;
 	public LayerMask background;
+	private bool block = false;
 	// Use this for initialization
 	void Start()
 	{
@@ -21,20 +25,40 @@ public class ListEnemyArea2 : MonoBehaviour
 		removeList = new List<GameObject>();
 
 		//RaycastHit2D hitEnd = Physics2D.Raycast(new Vector2(startSpawPositon.position.x, startSpawPositon.position.y), Vector2.right, background);
-	//	RaycastHit2D hitStart = Physics2D.Raycast(new Vector2(endSpawPosition.position.x, endSpawPosition.position.y), Vector2.left, background);
+		//	RaycastHit2D hitStart = Physics2D.Raycast(new Vector2(endSpawPosition.position.x, endSpawPosition.position.y), Vector2.left, background);
 
-	//	Debug.Log(hitEnd.distance + " " + hitStart.distance);
-		coroutine = spawEnemy(waitTime);
-		StartCoroutine(coroutine);
+		//	Debug.Log(hitEnd.distance + " " + hitStart.distance);
+			coroutine = spawEnemy(waitTime);
+			StartCoroutine(coroutine);
+			numberActiveBSSniper = listBaseStandingSniper.Count;
+			if(Gift.Count != 0)
+		{
+			StartCoroutine(SpawGift(waitTimeSpaw));
+		}
 	}
-	
-	private IEnumerator spawEnemy(float time)
+	private IEnumerator SpawGift(float waitTime)
 	{
 		while (true)
 		{
+			yield return new WaitForSeconds(waitTime);
+			int number = Random.Range(1, Gift.Count);
+			Vector2 pos = new Vector2(startSpawPositon.position.x, startSpawPositon.position.y);
+			Instantiate(Gift[number - 1], pos, Quaternion.identity);
+			yield return new WaitForSeconds(Random.Range(waitTime, waitTime * 20));
+		}
+	}
+	private void SpawEnemy(Transform pTransform)
+	{
+			if(!block)
+			Instantiate(enemySolider, pTransform.position, Quaternion.identity);
+	}
+	private IEnumerator spawEnemy(float time)
+	{
+		while (true && !block)
+		{
 			yield return new WaitForSeconds(time);
 			getPosition();
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(Random.Range(1f, 2f));
 		}
 	}
 	private void getPosition()
@@ -55,6 +79,12 @@ public class ListEnemyArea2 : MonoBehaviour
 			if (hit.distance >= 1f)
 				Instantiate(enemySolider, pos, Quaternion.identity);
 		}
+		if (!checkRayCast)
+		{
+			Vector2 pos = new Vector2(Random.Range(startSpawPositon.position.x, startSpawPositon.position.x + 5f), startSpawPositon.position.y);
+			Instantiate(enemySolider, pos, Quaternion.identity);
+			
+		}
 	
 	}
 
@@ -62,8 +92,13 @@ public class ListEnemyArea2 : MonoBehaviour
 	void Update()
 	{
 
-		//if(numberActiveBSSniper != listBaseStandingSniper.Count)
-			ActiveEnemy();
+	//	if(numberActiveBSSniper != listBaseStandingSniper.Count)
+			if(removeList.Count < numberActiveBSSniper)
+				ActiveEnemy();
+		else
+		{
+			block = true;
+		}
 	}
 	private void ActiveEnemy()
 	{
@@ -77,17 +112,19 @@ public class ListEnemyArea2 : MonoBehaviour
 				{
 					enemy.SetActive(true);
 					removeList.Add(enemy);
-
-					numberActiveBSSniper++;
+					//Debug.Log(numberActiveBSSniper);
+					//numberActiveBSSniper++;
 				}
 			}
-		if(numberActiveBSSniper > 0)
-		{
+	
+	//	if(numberActiveBSSniper > 0)
+		//{
 			foreach(GameObject enemy in removeList)
 			{
 				listBaseStandingSniper.Remove(enemy);
 			}
-		}
+		//}
+		
 
 	}
 }

@@ -56,7 +56,9 @@ public class SlantBotState : IEnemyState
 
 	public void Exit()
 	{
-
+		enemy.mAnimator.SetFloat("Horizontal", 0);
+		enemy.mAnimator.SetFloat("Vertical", 0);
+		enemy.mAnimator.ResetTrigger("Jump");
 	}
 
 	public void OnTriggerEnter(Collider2D other)
