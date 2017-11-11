@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "811992280355",
+    "firebase_url": "https://super-contra-20171.firebaseio.com",
+    "project_id": "super-contra-20171",
+    "storage_bucket": "super-contra-20171.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811992280355:android:5fbb9ea85252ecd3",
+        "android_client_info": {
+          "package_name": "com.n12.supercontra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811992280355-ptgog6e10kfrudb3p9rum9eqf3fo1n6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFE4e1nTPNRxh1TH7ZgJSOyFveCePou1A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
