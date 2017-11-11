@@ -125,6 +125,8 @@
     <Compile Include="Assets\_Scripts\MenuHandler.cs" />
     <Compile Include="Assets\_Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
+    <Compile Include="Assets\_Scripts\PreGameData.cs" />
+    <Compile Include="Assets\_Scripts\PreGameHandler.cs" />
     <Compile Include="Assets\_Scripts\RefDefinition.cs" />
     <Compile Include="Assets\_Scripts\Tank.cs" />
     <Compile Include="Assets\_Scripts\test.cs" />
