@@ -256,6 +256,7 @@ public class MenuHandler : MonoBehaviour {
     public void play(bool immortal)
     {
         GameManager.instance.immortal = immortal;
+        GameManager.instance.currentArea = 0;
         //set default bullet...
 
 

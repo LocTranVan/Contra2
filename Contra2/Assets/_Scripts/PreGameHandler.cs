@@ -11,12 +11,12 @@ public class PreGameHandler : MonoBehaviour {
     public GameObject shopPanel, topBarPanel, loadingPanel;
     private DatabaseReference reference;
     public Button lifeBtn, machineBtn, lazerBtn, flameBtn, spreadBtn, playBtn;
-    public Text coinText, livesText;
+    public Text coinText, livesText, stageText;
     int coin, live;
 
     void Awake()
     {
-        
+        stageText.text = "Area " + (GameManager.instance.currentArea + 1).ToString();
         if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
         {
             //offline mode
@@ -25,11 +25,13 @@ public class PreGameHandler : MonoBehaviour {
             if (GameManager.instance.immortal)
             {
                 //immortal mode
+                Debug.Log("PreGame Immortal mode");
                 live = RefDefinition.IMMORTAL_LIVE_VALUE;
                 livesText.text = "IMMORTAL MODE";
             } else
             {
                 //default mode
+                Debug.Log("PreGame default offline mode");
                 live = GameManager.instance.lives;
                 livesText.text = "LIVE REMAIN: " + live.ToString();
             }
@@ -42,6 +44,7 @@ public class PreGameHandler : MonoBehaviour {
 
             //read live, guntype
             live = GameManager.instance.lives;
+            livesText.text = "LIVE REMAIN: " + live.ToString();
             //gunType = PlayerPrefs.GetString("GunType");
 
             FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://super-contra-20171.firebaseio.com/");
@@ -116,7 +119,7 @@ public class PreGameHandler : MonoBehaviour {
         //get coin
         if (coin >= ItemPrice.LIFE)
         {
-            int newCoin = coin - ItemPrice.FLAME_BULLET;
+            int newCoin = coin - ItemPrice.LIFE;
             //can buy
             showLoading();
             disableAllButton();
@@ -133,6 +136,7 @@ public class PreGameHandler : MonoBehaviour {
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     live++;
+                    livesText.text = "LIVE REMAIN: " + live.ToString();
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
