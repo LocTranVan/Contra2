@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -2099,7 +2097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.04461894, y: 0}
   m_AnchorMax: {x: 0.316, y: 1}
-  m_AnchoredPosition: {x: -6.899994, y: 0}
+  m_AnchoredPosition: {x: -6.8999863, y: 0}
   m_SizeDelta: {x: -21.800003, y: -12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730639189
@@ -2695,10 +2693,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2025844078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd9a36d0f820e14c9252d6dd4d99ab6, type: 3}
+  m_Script: {fileID: 11500000, guid: eead41f1a628f344197c23add8dcfacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultBullet: {fileID: 0}
+  bullet: {fileID: 1313094497753242, guid: 84c5522ddd90de142847a4c425c36c19, type: 2}
+  bulletPrefabs: []
+  scenePaths:
+  - Area1
+  - Area2
+  - Area3
+  currentArea: 0
+  isGameOver: 0
 --- !u!4 &2025844080
 Transform:
   m_ObjectHideFlags: 0

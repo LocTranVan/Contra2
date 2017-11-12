@@ -38,7 +38,17 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
+	//	init();
 	}
+	// Test
+	/*
+	public void init()
+	{
+		lives = 3;
+		immortal = true;
+		SceneManager.LoadScene("Area1");
+	}
+	*/
 
     public void setResult(string key, int value)
     {
