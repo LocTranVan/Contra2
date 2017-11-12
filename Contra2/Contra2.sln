@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contra2", "Contra2.csproj", "{0FFE9289-4131-EAE9-4898-4B6FF7621125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contra2.Plugins", "Contra2.Plugins.csproj", "{A3FC4BD1-91DF-C92B-9574-7672C3589709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contra2.Editor", "Contra2.Editor.csproj", "{1781D44E-9F5E-EB8D-422C-E9F183BF18DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FFE9289-4131-EAE9-4898-4B6FF7621125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFE9289-4131-EAE9-4898-4B6FF7621125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFE9289-4131-EAE9-4898-4B6FF7621125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFE9289-4131-EAE9-4898-4B6FF7621125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3FC4BD1-91DF-C92B-9574-7672C3589709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3FC4BD1-91DF-C92B-9574-7672C3589709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3FC4BD1-91DF-C92B-9574-7672C3589709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3FC4BD1-91DF-C92B-9574-7672C3589709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1781D44E-9F5E-EB8D-422C-E9F183BF18DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1781D44E-9F5E-EB8D-422C-E9F183BF18DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1781D44E-9F5E-EB8D-422C-E9F183BF18DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1781D44E-9F5E-EB8D-422C-E9F183BF18DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

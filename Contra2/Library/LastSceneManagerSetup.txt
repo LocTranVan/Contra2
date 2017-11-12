@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/PreGame.unity
+=======
+- path: Assets/_Scenes/Menu.unity
+>>>>>>> 88c273de41ac97327cb545ee045c1be74ce256ba
   isLoaded: 1
   isActive: 1

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 90ad9af45b07b574999033411b3ad48e
 labels:
 - gpsr
 folderAsset: yes
 timeCreated: 1510480922
 licenseType: Free
+=======
+guid: 6c965bed2a7e6534a861a4fba7eff8cd
+labels:
+- gpsr
+folderAsset: yes
+timeCreated: 1510420348
+licenseType: Pro
+>>>>>>> 88c273de41ac97327cb545ee045c1be74ce256ba
 PluginImporter:
   serializedVersion: 2
   iconMap: {}
