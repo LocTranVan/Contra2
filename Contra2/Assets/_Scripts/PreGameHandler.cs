@@ -8,13 +8,11 @@ using UnityEngine.UI;
 
 public class PreGameHandler : MonoBehaviour {
 
-    public GameObject shopPanel, preData;
+    public GameObject shopPanel, topBarPanel, loadingPanel;
     private DatabaseReference reference;
-    public PreGameData preGameData;
     public Button lifeBtn, machineBtn, lazerBtn, flameBtn, spreadBtn, playBtn;
-    public Text coinText;
+    public Text coinText, livesText;
     int coin, live;
-    string gunType;
 
     void Awake()
     {
@@ -22,16 +20,29 @@ public class PreGameHandler : MonoBehaviour {
         if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
         {
             //offline mode
+            topBarPanel.SetActive(false);
             shopPanel.SetActive(false);
+            if (GameManager.instance.immortal)
+            {
+                //immortal mode
+                live = RefDefinition.IMMORTAL_LIVE_VALUE;
+                livesText.text = "IMMORTAL MODE";
+            } else
+            {
+                //default mode
+                live = GameManager.instance.lives;
+                livesText.text = "LIVE REMAIN: " + live.ToString();
+            }
         } else
         {
+            //online mode
             disableAllButton();
             //online mode
             //init coin
 
             //read live, guntype
-            live = PlayerPrefs.GetInt("live");
-            gunType = PlayerPrefs.GetString("GunType");
+            live = GameManager.instance.lives;
+            //gunType = PlayerPrefs.GetString("GunType");
 
             FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://super-contra-20171.firebaseio.com/");
 
@@ -107,7 +118,7 @@ public class PreGameHandler : MonoBehaviour {
         {
             int newCoin = coin - ItemPrice.FLAME_BULLET;
             //can buy
-
+            showLoading();
             disableAllButton();
             reference.Child("Coin").SetValueAsync(newCoin).ContinueWith(task =>
             {
@@ -125,6 +136,7 @@ public class PreGameHandler : MonoBehaviour {
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
+                disableLoading();
             });
 
 
@@ -140,6 +152,7 @@ public class PreGameHandler : MonoBehaviour {
         {
             int newCoin = coin - ItemPrice.MACHINE_BULLET;
             //can buy
+            showLoading();
             disableAllButton();
             reference.Child("Coin").SetValueAsync(newCoin).ContinueWith(task =>
             {
@@ -154,10 +167,11 @@ public class PreGameHandler : MonoBehaviour {
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     disableGunButton();
-                    gunType = RefDefinition.MACHINE_BULLET;
+                    //gunType = RefDefinition.MACHINE_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
+                disableLoading();
             });
         }
         else
@@ -172,6 +186,7 @@ public class PreGameHandler : MonoBehaviour {
         {
             int newCoin = coin - ItemPrice.LAZER_BULLET;
             //can buy
+            showLoading();
             disableAllButton();
             reference.Child("Coin").SetValueAsync(newCoin).ContinueWith(task =>
             {
@@ -186,10 +201,11 @@ public class PreGameHandler : MonoBehaviour {
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     disableGunButton();
-                    gunType = RefDefinition.LAZER_BULLET;
+                    //gunType = RefDefinition.LAZER_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
+                disableLoading();
             });
         }
         else
@@ -205,6 +221,7 @@ public class PreGameHandler : MonoBehaviour {
 
             int newCoin = coin - ItemPrice.FLAME_BULLET;
             //can buy
+            showLoading();
             disableAllButton();
             reference.Child("Coin").SetValueAsync(newCoin).ContinueWith(task =>
             {
@@ -219,10 +236,11 @@ public class PreGameHandler : MonoBehaviour {
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     disableGunButton();
-                    gunType = RefDefinition.FLAME_BULLET;
+                    //gunType = RefDefinition.FLAME_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
+                disableLoading();
             });
         }
         else
@@ -237,6 +255,7 @@ public class PreGameHandler : MonoBehaviour {
         {
             int newCoin = coin - ItemPrice.SPREAD_BULLET;
             //can buy
+            showLoading();
             disableAllButton();
             reference.Child("Coin").SetValueAsync(newCoin).ContinueWith(task =>
             {
@@ -251,10 +270,11 @@ public class PreGameHandler : MonoBehaviour {
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     disableGunButton();
-                    gunType = RefDefinition.SPREAD_BULLET;
+                    //gunType = RefDefinition.SPREAD_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
                 }
+                disableLoading();
             });
         }
         else
@@ -265,9 +285,19 @@ public class PreGameHandler : MonoBehaviour {
 
     public void play()
     {
-        preGameData.live = live;
-        preGameData.bulletType = gunType;
+        GameManager.instance.lives = live;
+        //preGameData.bulletType = gunType;
 
         //play scene
+    }
+
+    public void showLoading()
+    {
+        loadingPanel.SetActive(true);
+    }
+
+    public void disableLoading()
+    {
+        loadingPanel.SetActive(false);
     }
 }

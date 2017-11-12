@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject defaultBullet;
+    
+	public GameObject bullet;
+    public GameObject[] bulletPrefabs;
 	public static GameManager instance = null;
-	private int level = 1;
-	private string[] scenePaths = { "Area1", "Area2", "Area3" };
-	private int currentArea;
-	
+	public string[] scenePaths = { "Area1", "Area2", "Area3" };
+	public int currentArea; //0, 1, 2
+    public Dictionary<string, int> gameResult;
+    public bool isGameOver;
 	public int lives
 	{
 		get; set;
@@ -25,14 +27,8 @@ public class GameManager : MonoBehaviour {
 	{
 		get; set;
 	}
-	public int Score
-	{
-		get; set;
-	}
-	public int numberSolider
-	{
-		get; set;
-	}
+
+    
 	void Start () {
 		
 		if (instance == null)
@@ -43,39 +39,19 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 	}
-	public void LoadArea()
-	{
-		//Debug.Log("here");
-		SceneManager.LoadScene(scenePaths[currentArea]);
-		currentArea++;
-	}
-	public void setCurrentArea(int newCurrent)
-	{
-		currentArea = newCurrent;
-	}
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-	static public void CallbackInitialization()
-	{
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-	static private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
-	{
-		instance.level++;
-		//instance.InitGame();
-		instance.InitGameOffLine();
-	}
 
-	
-	//Initializes the game for each level.
-	void InitGame()
-	{
-		LoadArea();	
-	}
-	void InitGameOffLine()
-	{
-		lives = 3;
-		Bullet = defaultBullet;
-		immortal = false;
-		LoadArea();
-	}
+    public void setResult(string key, int value)
+    {
+        int val;
+        if (gameResult.TryGetValue(key, out val))
+        {
+            // yay, value exists!
+            gameResult[key] = value;
+        }
+        else
+        {
+            // darn, lets add the value
+            gameResult.Add(key, value);
+        }
+    }
 }
