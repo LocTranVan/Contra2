@@ -56,9 +56,9 @@ public class Player : Character
 	}
 	private void init()
 	{
-		lives = GameManager.instance.lives;
-		bullet = GameManager.instance.Bullet;
-		liveForever = GameManager.instance.immortal;
+		lives = gameManage.instance.lives;
+		bullet = gameManage.instance.Bullet;
+		liveForever = gameManage.instance.immortal;
 
 	}
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -198,7 +198,7 @@ public class Player : Character
 	public void setSocre(int score)
 	{
 		Score = Score + score;
-		GameManager.instance.Score = Score;
+		gameManage.instance.Score = Score;
 		Debug.Log(Score);
 	}
 	public override void TakeDamage()
@@ -210,7 +210,7 @@ public class Player : Character
 			{
 				IsDead = true;
 				lives--;
-				GameManager.instance.lives = lives;
+				gameManage.instance.lives = lives;
 
 				mAnimator.ResetTrigger("Jump");
 				mAnimator.SetTrigger("Dead");

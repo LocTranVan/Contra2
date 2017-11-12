@@ -231,6 +231,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 79510141}
+  - component: {fileID: 79510142}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -251,6 +252,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &79510142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79510140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d5016bd1ed4de47bf2a0d5e311bc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultBullet: {fileID: 1313094497753242, guid: 84c5522ddd90de142847a4c425c36c19,
+    type: 2}
 --- !u!1 &97037177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1249,6 @@ GameObject:
   - component: {fileID: 694447449}
   - component: {fileID: 694447448}
   - component: {fileID: 694447447}
-  - component: {fileID: 694447451}
   m_Layer: 0
   m_Name: EasyTouchControlsCanvas
   m_TagString: Untagged
@@ -1322,17 +1335,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &694447451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694447446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd9a36d0f820e14c9252d6dd4d99ab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &696571263
 GameObject:
   m_ObjectHideFlags: 0

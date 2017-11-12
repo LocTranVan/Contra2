@@ -73,9 +73,6 @@ public class Tank : MonoBehaviour {
 			if(gameObject.tag == "Boss")
 			{
 				Camera.GetComponent<CameraMovement>().setBlock(false);
-				Debug.Log("here");
-
-				GameManager.instance.LoadArea();
 				Destroy(gameObject); 
 			}
 			foreach(Transform tranform in gameObject.GetComponentsInChildren(typeof(Transform), true))
