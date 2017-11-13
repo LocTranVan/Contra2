@@ -109,6 +109,7 @@
     <Compile Include="Assets\_Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\_Scripts\Character.cs" />
     <Compile Include="Assets\_Scripts\ControlStones.cs" />
+    <Compile Include="Assets\_Scripts\EndGameHandler.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Boss.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Dead.cs" />
     <Compile Include="Assets\_Scripts\Enemy\Enemy.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\_Scripts\SpawTheoNhuCau.cs" />
     <Compile Include="Assets\_Scripts\Tank.cs" />
     <Compile Include="Assets\_Scripts\test.cs" />
+    <Compile Include="Assets\_Scripts\Test2.cs" />
     <Compile Include="Assets\_Scripts\WalkingShootBehaivior.cs" />
     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerUI.cs" />

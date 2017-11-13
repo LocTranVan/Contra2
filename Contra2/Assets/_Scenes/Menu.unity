@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &207512918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,7 +1691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1474286821
 Transform:
   m_ObjectHideFlags: 0
@@ -2595,7 +2595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2013681637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2698,6 +2698,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefabs:
   - {fileID: 1313094497753242, guid: 84c5522ddd90de142847a4c425c36c19, type: 2}
+  - {fileID: 1352680762540120, guid: 9ead2dd17208d4e418e36cbae9ff4e43, type: 2}
+  - {fileID: 1967125657630654, guid: 3dfdbe09dbbe6a64b82fdb332c61e3c1, type: 2}
+  - {fileID: 1267908890693734, guid: 8eabc29272507be4993520c2858279aa, type: 2}
+  - {fileID: 1863990595681370, guid: 8d37046f381107642abe5e1ad4c23eb2, type: 2}
   scenePaths:
   - Area1
   - Area2
