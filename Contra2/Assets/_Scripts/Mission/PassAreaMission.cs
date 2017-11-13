@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PassAreaMission : Mission {
 
-	public PassAreaMission(string description)
+	public PassAreaMission(string description, int Coin)
     {
-        this.isComplete = false;
-        this.isReceive = false;
-        this.description = description;
+        this.Coin = Coin;
+        this.Complete = false;
+        this.Receive = false;
+        this.Description = description;
     }
 }

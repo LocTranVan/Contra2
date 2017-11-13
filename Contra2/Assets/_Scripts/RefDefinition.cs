@@ -10,7 +10,7 @@ public static class RefDefinition {
     public static string LAZER_BULLET = "lazer_bullet";
     public static string FLAME_BULLET = "flame_bullet";
     public static string SPREAD_BULLET = "spread_bullet";
-    public static int DEFAULT_LIVES = 10;
+    public static int DEFAULT_LIVES = 1000;
     public static int IMMORTAL_LIVE_VALUE = -1;
 
     //game RESULT

@@ -37,8 +37,9 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-		//init();
-	}
+        gameResult = new Dictionary<string, int>();
+        //init();
+    }
 	// Test
 	/*
 	public void init()

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Mission {
 
-    public bool isComplete;
-    public bool isReceive;
-    public string description;
+    public bool Complete;
+    public bool Receive;
+    public int Coin;
+    public string Description;
 
 }

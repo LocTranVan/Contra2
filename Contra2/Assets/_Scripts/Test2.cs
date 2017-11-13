@@ -19,13 +19,13 @@ public class Test2 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        List<Mission> dataList = new List<Mission>();
-        PassAreaMission passAreaMission = new PassAreaMission("XXXX");
-        dataList.Add(passAreaMission);
-        KillMission killMission = new KillMission("XXXXX2", 20);
-        dataList.Add(killMission);
-        string json = JsonUtility.ToJson(killMission);
-        Debug.Log(json);
+        //List<Mission> dataList = new List<Mission>();
+        //PassAreaMission passAreaMission = new PassAreaMission("XXXX");
+        //dataList.Add(passAreaMission);
+        //KillMission killMission = new KillMission("XXXXX2", 20);
+        //dataList.Add(killMission);
+        //string json = JsonUtility.ToJson(killMission);
+        //Debug.Log(json);
         //auth.SignInWithEmailAndPasswordAsync("tan@example.com", "12345678").ContinueWith(task =>
         //{
         //    if (task.IsCompleted)

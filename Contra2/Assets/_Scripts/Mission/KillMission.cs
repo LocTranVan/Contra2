@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class KillMission : Mission {
 
-    public int process;
+    public int Process;
     public int killMustDo;
 
-    public KillMission(string description ,int killMustDo)
+    public KillMission(string description ,int killMustDo, int coin)
     {
-        this.isComplete = false;
-        this.isReceive = false;
-        this.process = 0;
+        this.Coin = coin;
+        this.Complete = false;
+        this.Receive = false;
+        this.Process = 0;
         this.killMustDo = killMustDo;
-        this.description = description;
+        this.Description = description;
     }
 }

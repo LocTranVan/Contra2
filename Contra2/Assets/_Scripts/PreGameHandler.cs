@@ -4,6 +4,7 @@ using Firebase.Unity.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PreGameHandler : MonoBehaviour {
@@ -13,9 +14,11 @@ public class PreGameHandler : MonoBehaviour {
     public Button lifeBtn, machineBtn, lazerBtn, flameBtn, spreadBtn, playBtn;
     public Text coinText, livesText, stageText;
     int coin, live;
+    bool isBulletPurchased;
 
     void Awake()
     {
+        isBulletPurchased = false;
         stageText.text = "Area " + (GameManager.instance.currentArea + 1).ToString();
         if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
         {
@@ -76,32 +79,52 @@ public class PreGameHandler : MonoBehaviour {
         }
     }
 
+    private void SetActiveButton(Button btn, bool isActive)
+    {
+        btn.enabled = isActive;
+
+        Transform blurBg = btn.gameObject.transform.Find("BlurBg");
+        if (blurBg != null)
+        {
+            blurBg.gameObject.SetActive(!isActive);
+        }
+    }
+
     private void disableAllButton()
     {
-        lifeBtn.enabled = false;
-        machineBtn.enabled = false;
-        lazerBtn.enabled = false;
-        flameBtn.enabled = false;
-        spreadBtn.enabled = false;
-        playBtn.enabled = false;
+        SetActiveButton(lifeBtn, false);
+        SetActiveButton(machineBtn, false);
+        SetActiveButton(flameBtn, false);
+        SetActiveButton(spreadBtn, false);
+        SetActiveButton(lazerBtn, false);
+        SetActiveButton(playBtn, false);
     }
 
     private void enableAllButton()
     {
-        lifeBtn.enabled = true;
-        machineBtn.enabled = true;
-        lazerBtn.enabled = true;
-        flameBtn.enabled = true;
-        spreadBtn.enabled = true;
-        playBtn.enabled = true;
+        SetActiveButton(lifeBtn, true);
+        if (isBulletPurchased)
+        {
+            SetActiveButton(machineBtn, false);
+            SetActiveButton(flameBtn, false);
+            SetActiveButton(spreadBtn, false);
+            SetActiveButton(lazerBtn, false);
+        } else
+        {
+            SetActiveButton(machineBtn, true);
+            SetActiveButton(flameBtn, true);
+            SetActiveButton(spreadBtn, true);
+            SetActiveButton(lazerBtn, true);
+        }
+        SetActiveButton(playBtn, true);
     }
 
     private void disableGunButton ()
     {
-        machineBtn.enabled = false;
-        lazerBtn.enabled = false;
-        flameBtn.enabled = false;
-        spreadBtn.enabled = false;
+        SetActiveButton(machineBtn, false);
+        SetActiveButton(flameBtn, false);
+        SetActiveButton(spreadBtn, false);
+        SetActiveButton(lazerBtn, false);
     }
 
     // Use this for initialization
@@ -168,12 +191,15 @@ public class PreGameHandler : MonoBehaviour {
                 }
                 else if (task.IsCompleted)
                 {
+                    
                     Debug.Log("mua thanh cong");
                     enableAllButton();
                     disableGunButton();
                     //gunType = RefDefinition.MACHINE_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
+                    isBulletPurchased = true;
+                    GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[1];
                 }
                 disableLoading();
             });
@@ -208,6 +234,8 @@ public class PreGameHandler : MonoBehaviour {
                     //gunType = RefDefinition.LAZER_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
+                    isBulletPurchased = true;
+                    GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[2];
                 }
                 disableLoading();
             });
@@ -243,6 +271,8 @@ public class PreGameHandler : MonoBehaviour {
                     //gunType = RefDefinition.FLAME_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
+                    isBulletPurchased = true;
+                    GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[4];
                 }
                 disableLoading();
             });
@@ -277,6 +307,8 @@ public class PreGameHandler : MonoBehaviour {
                     //gunType = RefDefinition.SPREAD_BULLET;
                     coin = newCoin;
                     coinText.text = coin.ToString();
+                    isBulletPurchased = true;
+                    GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[3];
                 }
                 disableLoading();
             });
@@ -293,6 +325,7 @@ public class PreGameHandler : MonoBehaviour {
         //preGameData.bulletType = gunType;
 
         //play scene
+        SceneManager.LoadScene(GameManager.instance.scenePaths[GameManager.instance.currentArea]);
     }
 
     public void showLoading()

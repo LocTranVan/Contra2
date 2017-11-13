@@ -31,9 +31,11 @@ public class MenuHandler : MonoBehaviour {
     public InputField emailInputField, passwordInputField;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-    public GameObject loginPanel, playPanel, topBarPanel, icon, loadingPanel;
+    public GameObject loginPanel, playPanel, topBarPanel, icon, loadingPanel, missionPanel;
+    public GameObject[] missionGameObjects;
     public Text showLoginButton, coinText;
     public Button toOfflineBtn, playImmortalModeBtn;
+    int coin;
     
 
     private void Awake()
@@ -43,8 +45,10 @@ public class MenuHandler : MonoBehaviour {
         passwordInputField.inputType = InputField.InputType.Password;
 
         //init null player
-        PlayerPrefs.SetString(RefDefinition.UID, "");
-        PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 1);
+        if (PlayerPrefs.GetString(RefDefinition.UID) != "")
+        {
+            InitTopBar();
+        }
         topBarPanel.SetActive(false);
 
         Invoke("ShowPlayPanel", 2.5f);
@@ -119,9 +123,18 @@ public class MenuHandler : MonoBehaviour {
                 ShowPlayPanel();
                 //writeNewUser(newUser.UserId, "tanphamanh", "tanpham@example.com", 20);
                 InitTopBar();
-                InitMission();
+                InitMission(false);
             });
         }
+    }
+
+    public void SetActivePanel(GameObject panel, bool isActive) {
+        panel.SetActive(isActive);
+    }
+
+    public void CloseMissionPanel()
+    {
+        SetActivePanel(missionPanel, false);
     }
 
     public void ShowPlayPanel()
@@ -155,6 +168,7 @@ public class MenuHandler : MonoBehaviour {
             
             if (task.IsFaulted)
             {
+                coin = 0;
                 Debug.Log("coin get failed");
                 coinText.text = "0";
                 
@@ -167,12 +181,13 @@ public class MenuHandler : MonoBehaviour {
                 Debug.Log("coin = " + snapshot.Value.ToString());
                 //int coin = (int) snapshot.Value;
                 coinText.text = snapshot.Value.ToString();
+                coin = System.Int32.Parse(snapshot.Value.ToString());
             }
             disableLoading();
         });
     }
 
-    private void InitMission()
+    public void InitMission(bool isVisible)
     {
         showLoading();
         Debug.Log("Start init misson");
@@ -198,59 +213,104 @@ public class MenuHandler : MonoBehaviour {
                     if (j <= 2)
                     {
                         //pass misson
-                        ((PassAreaMission)MissionManager.instance.missionList[j]).isComplete = isComplete;
-                        ((PassAreaMission)MissionManager.instance.missionList[j]).isReceive = isReceive;
+                        ((PassAreaMission)MissionManager.instance.missionList[j]).Complete = isComplete;
+                        ((PassAreaMission)MissionManager.instance.missionList[j]).Receive = isReceive;
                         Debug.Log("Pass Area Mission " + j + isComplete + " " + isReceive);
                     }
                     else
                     {
                         //kill mission
                         int process = System.Int32.Parse(missionSnapshot.Child("Process").Value.ToString());
-                        ((KillMission)MissionManager.instance.missionList[j]).isComplete = isComplete;
-                        ((KillMission)MissionManager.instance.missionList[j]).isReceive = isReceive;
-                        ((KillMission)MissionManager.instance.missionList[j]).process = process;
+                        ((KillMission)MissionManager.instance.missionList[j]).Complete = isComplete;
+                        ((KillMission)MissionManager.instance.missionList[j]).Receive = isReceive;
+                        ((KillMission)MissionManager.instance.missionList[j]).Process = process;
                         Debug.Log("Kill Mission " + j + isComplete + " " + isReceive + " " + process);
                     }
+                }
+
+
+                for (int i = 0; i < 3; i++)
+                {
+                    PassAreaMission m = ((PassAreaMission)MissionManager.instance.missionList[i]);
+                    GameObject receiveBtn = missionGameObjects[i].transform.Find("RightPanel").Find("ReceiveButton").gameObject;
+                    GameObject statusText = missionGameObjects[i].transform.Find("RightPanel").Find("StatusText").gameObject;
+                    if (m.Complete)
+                    {
+                        if (m.Receive)
+                        {
+                            statusText.GetComponent<Text>().text = "Complete";
+                            SetActivePanel(receiveBtn, false);
+                            SetActivePanel(statusText, true);
+                        } else
+                        {
+                            SetActivePanel(receiveBtn, true);
+                            SetActivePanel(statusText, false);
+                        }
+                    } else
+                    {
+                        statusText.GetComponent<Text>().text = "Incomplete";
+                        SetActivePanel(receiveBtn, false);
+                        SetActivePanel(statusText, true);
+                    }
+                }
+                for (int i = 3; i < 12; i++)
+                {
+                    KillMission m = ((KillMission)MissionManager.instance.missionList[i]);
+                    GameObject receiveBtn = missionGameObjects[i].transform.Find("RightPanel").Find("ReceiveButton").gameObject;
+                    GameObject statusText = missionGameObjects[i].transform.Find("RightPanel").Find("StatusText").gameObject;
+                    if (m.Complete)
+                    {
+                        if (m.Receive)
+                        {
+                            statusText.GetComponent<Text>().text = "Complete";
+                            SetActivePanel(receiveBtn, false);
+                            SetActivePanel(statusText, true);
+                        }
+                        else
+                        {
+                            SetActivePanel(receiveBtn, true);
+                            SetActivePanel(statusText, false);
+                        }
+                    }
+                    else
+                    {
+                        statusText.GetComponent<Text>().text = m.Process + " / " + m.killMustDo;
+                        SetActivePanel(receiveBtn, false);
+                        SetActivePanel(statusText, true);
+                    }
+                }
+                if (isVisible)
+                {
+                    SetActivePanel(missionPanel, true);
                 }
                 disableLoading();
             }
         });
-
-
-        //for (int i = 0; i < MissionManager.instance.missionList.Count; i++)
-        //{
-        //    int j = i;
-        //    missionRef.Child(j.ToString()).GetValueAsync().ContinueWith(task =>
-        //    {
-        //        if (task.IsCanceled || task.IsFaulted)
-        //        {
-        //            Debug.Log("Get missoon " + j + " error");
-        //        }
-        //        else if (task.IsCompleted)
-        //        {
-        //            Debug.Log("Get missoon " + j + " complete");
-        //            DataSnapshot snapshot = task.Result;
-        //            bool isComplete = (bool)snapshot.Child("Complete").Value;
-        //            bool isReceive = (bool)snapshot.Child("Receive").Value;
-        //            if (j <= 2)
-        //            {
-        //                //pass misson
-        //                ((PassAreaMission)MissionManager.instance.missionList[j]).isComplete = isComplete;
-        //                ((PassAreaMission)MissionManager.instance.missionList[j]).isReceive = isReceive;
-        //                Debug.Log("Pass Area Mission " + j + isComplete + " " + isReceive);
-        //            } else
-        //            {
-        //                //kill mission
-        //                int process = System.Int32.Parse(snapshot.Child("Process").Value.ToString());
-        //                ((KillMission)MissionManager.instance.missionList[j]).isComplete = isComplete;
-        //                ((KillMission)MissionManager.instance.missionList[j]).isReceive = isReceive;
-        //                ((KillMission)MissionManager.instance.missionList[j]).process = process;
-        //                Debug.Log("Kill Mission " + j + isComplete + " " + isReceive + " " + process);
-        //            }
-        //        }
-        //    });
-        //}
         
+    }
+
+    public void ReceiveReward(int missionIndex)
+    {
+        showLoading();
+        DatabaseReference missionRef = reference.Child("User").Child(PlayerPrefs.GetString("uid")).Child("Missions").Child(missionIndex.ToString()).Child("Receive");
+        missionRef.SetValueAsync(true).ContinueWith(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                disableLoading();
+            } else
+            {
+                int missionCoin = ((Mission)MissionManager.instance.missionList[missionIndex]).Coin;
+                DatabaseReference coinRef = reference.Child("User").Child(PlayerPrefs.GetString("uid")).Child("Coin");
+                coinRef.SetValueAsync(coin + missionCoin).ContinueWith(task2 =>
+                {
+                    coin += missionCoin;
+                    coinText.text = coin + "";
+                    InitMission(true);
+                });
+                
+            }
+        });
     }
 
     public void play(bool immortal)
@@ -258,7 +318,7 @@ public class MenuHandler : MonoBehaviour {
         GameManager.instance.immortal = immortal;
         GameManager.instance.currentArea = 0;
         //set default bullet...
-
+        GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[0];
 
         if (immortal)
         {
@@ -276,6 +336,7 @@ public class MenuHandler : MonoBehaviour {
     public void logout()
     {
         auth.SignOut();
+        PlayerPrefs.SetString(RefDefinition.UID, "");
         PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 1);
         ShowPlayPanel();
         topBarPanel.SetActive(false);
