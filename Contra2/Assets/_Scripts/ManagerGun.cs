@@ -47,7 +47,7 @@ namespace Assets._Scripts
 			{
 				
 				case NormalGun:
-					return 5;
+					return 6f;
 				case FireballGun:
 					return 5.7f;
 				case MachineGunPink:

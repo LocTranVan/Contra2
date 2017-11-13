@@ -29,7 +29,7 @@ public class Player : Character
 	float waitTime;
 	[SerializeField]
 	private int lives = 3;
-	public bool liveForever;
+	private bool liveForever;
 	int fullHealth;
 	private int Score;
 	private ETCJoystick eTCJoystick;
@@ -46,6 +46,7 @@ public class Player : Character
 		{
 			blockgravity = true;
 		}
+		
 	}
 	void Start () {
 		base.Start();
@@ -58,6 +59,7 @@ public class Player : Character
 	{
 		lives = GameManager.instance.lives;
 		bullet = GameManager.instance.Bullet;
+		
 		liveForever = GameManager.instance.immortal;
 
 
@@ -89,7 +91,8 @@ public class Player : Character
 			float v = ETCInput.GetAxis("Vertical");
 
 			Animating(h, v);
-			Move(h, v);
+			if(v >= 0)
+				Move(h, v);
 			if (jump && onGround)
 			{
 				Jump();
@@ -206,14 +209,20 @@ public class Player : Character
 		if (!IsDead )
 		{
 			health -= 1;
-			if (health == 0)
+			if (health == 0 )
 			{
-				IsDead = true;
+				
 				lives--;
 				GameManager.instance.lives = lives;
 
 				mAnimator.ResetTrigger("Jump");
-				mAnimator.SetTrigger("Dead");
+				if (!liveForever)
+				{
+					mAnimator.SetTrigger("Dead");
+					IsDead = true;
+				}
+			
+
 				audioSource.PlayOneShot(Dead);
 				Physics2D.IgnoreLayerCollision(9, 12, true);
 				if(lives > 0) { 

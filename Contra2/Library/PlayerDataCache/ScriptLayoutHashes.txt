@@ -2,7 +2,7 @@ Android
 922dde826533f20a40eadb188df86725 Assembly-CSharp.dll:.TestReporter
 a5dc8e1d45f7a04b5a38858efaebba9b Assembly-CSharp.dll:HedgehogTeam.EasyTouch.EasyTouch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ReporterGUI
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Bullet
+5f5502c2a2c0956369496adc2d688031 Assembly-CSharp.dll:.Bullet
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ReporterMessageReceiver
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -21,6 +21,7 @@ c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WalkingShootBehaivior
 d595b5bbbe6db228f12c3cf21561dfe4 Assembly-CSharp.dll:.ETCSetDirectActionTransform
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TwoTouchMe
+1860cc08777da663a0dd2c634b914f1e Assembly-CSharp.dll:.GameManager
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -146,16 +147,17 @@ d16f26eaac7f64265ddab7a65f83bc52 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.Quic
 3babdf1b73f65d5a6f182ebe20805bab Assembly-CSharp.dll:.GlobalEasyTouchEvent
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.LeanTween
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PinchMe
-3e6573a09a57e38cd638bce42b98f72a Assembly-CSharp.dll:.Player
+1ea0403825f9877c4af65558cb8abaa2 Assembly-CSharp.dll:.Player
 10b74813a48bec024655081ac075ed9d Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickTwist
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ImpactEffect
 ad5bb0671e9bf5efc7800f9845d29332 Assembly-CSharp.dll:.Tank
-257abac547a5bf79513a2faa10b276a8 Assembly-CSharp.dll:.Parabol
+6995691d753c159eaf8e04a7d8538d51 Assembly-CSharp.dll:.Parabol
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CubeSelect
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MissionManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LongTapMe
-1ce1d6d1026011e7c970016508434af3 Assembly-CSharp.dll:.PreGameHandler
+e75494468ffcab55c0d2e5b32d5d27b8 Assembly-CSharp.dll:.PreGameHandler
 98c01a2e666d6d7f66de029568da7db7 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickTouch
+ae6f316f39119e2c8667e039ecdffb69 Assembly-CSharp.dll:.ForArea1
 b140b09235077b07b3557ccdcb7b56cb Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickBase
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -205,7 +207,6 @@ c121657ec3868404f0b3dca094ff5144 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.Quic
 e5b297578672434876304be80fca6b94 Assembly-CSharp.dll:.ETCJoystick
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TwoLongTapMe
 a0f94ec51c559b50eab9df220bdfd467 Assembly-CSharp.dll:.Swipe
-cc773eab978fd40d36845467f0d89718 Assembly-CSharp.dll:.GameManager
 5e15245a410c44a1daa341620c1fb47c Assembly-CSharp.dll:.ButtonInputUI
 4221d6f2d120ea1c2b5b1485c67f9a95 Assembly-CSharp.dll:.MultiLayerTouch
 af4c120c08a83517c5ff7a79f5380780 Assembly-CSharp.dll:.ButtonUIEvent

@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour {
 	private string nameGun;
 	private string nameTag;
 
+	private AudioSource audio;
+	public AudioClip hitBackground;
 	private float speedX, speedY;
 	private float rangeShoot, speedBullet;
 	private Rigidbody2D rigidbody2D;
@@ -41,6 +43,7 @@ public class Bullet : MonoBehaviour {
 					Destroy(gameObject);
 				else
 				{
+					if(animator != null)
 					animator.SetTrigger("Hit");
 					boom = true;
 				}
@@ -50,6 +53,12 @@ public class Bullet : MonoBehaviour {
 	public void Boom()
 	{
 		Destroy(gameObject);
+	}
+	public void playHit()
+	{
+		audio = GetComponent<AudioSource>();
+	//	audio.PlayOneShot(hitBackground);
+		audio.Play();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -70,6 +79,8 @@ public class Bullet : MonoBehaviour {
 	}
 	public void setSpeed(Vector2 speed)
 	{
+		if (speed.x == 0 && speed.y == 0)
+			Destroy(gameObject);
 		this.speedX = speed.x;
 		this.speedY = speed.y;
 	}

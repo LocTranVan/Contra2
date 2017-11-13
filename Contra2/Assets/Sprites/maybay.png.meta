@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 16e124724fd26464ca6d7dce778bf8a2
-timeCreated: 1510282397
+timeCreated: 1510538015
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -17,6 +17,11 @@ TextureImporter:
     21300020: maybay_10
     21300022: maybay_11
     21300024: maybay_12
+    21300026: maybay_13
+    21300028: maybay_14
+    21300030: maybay_15
+    21300032: maybay_16
+    21300034: maybay_17
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -263,6 +268,76 @@ TextureImporter:
         y: 689
         width: 43
         height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: maybay_13
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: maybay_14
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 229
+        width: 387
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: maybay_15
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 140
+        width: 192
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: maybay_16
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 36
+        width: 290
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: maybay_17
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 140
+        width: 50
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

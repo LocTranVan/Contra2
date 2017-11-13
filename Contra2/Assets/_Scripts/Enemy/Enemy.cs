@@ -158,6 +158,8 @@ public class Enemy : Character {
 			health -= 1;
 			if (health <= 0)
 			{
+				
+				checkName();
 				IsDead = true;
 				if (!canMove)
 				{
@@ -168,11 +170,20 @@ public class Enemy : Character {
 				
 				ChangeState(new Dead());
 				audioSource.PlayOneShot(Dead);
-				if(health == 0)
-					Player.Instance.GetComponent<Player>().setSocre(1);
-				//	mAnimator.SetBool("Dead", true);
+				if (health == 0)
+					mAnimator.SetBool("Dead", true);
 			}
 		}
+	}
+	public void checkName()
+	{
+		Debug.Log(gameObject.name);
+		if (gameObject.name.Contains("Sandbag Sniper"))
+			GameManager.instance.changeResult(RefDefinition.SANDBAG_SNIPER, 1);
+		else if (gameObject.name.Contains("Outpost Unarmed Foot Soldier") || gameObject.name.Contains("Outpost Unarmed Foot SoldierPink"))
+			GameManager.instance.changeResult(RefDefinition.SOLDIER, 1);
+		else if(gameObject.name.Contains("Base Standing Sniper"))
+			GameManager.instance.changeResult(RefDefinition.SNIPER, 1);
 	}
 	public void Boom()
 	{

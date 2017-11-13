@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &207512918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 296.2, y: -30.349998}
+  m_AnchoredPosition: {x: 10.700012, y: -30.349998}
   m_SizeDelta: {x: 160, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344711555
@@ -1514,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 296.2, y: -106.35}
+  m_AnchoredPosition: {x: 10.700012, y: -106.35}
   m_SizeDelta: {x: 160, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222281254
@@ -1691,7 +1691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1474286821
 Transform:
   m_ObjectHideFlags: 0
@@ -1749,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 296.2, y: -68.35}
+  m_AnchoredPosition: {x: 10.700012, y: -68.35}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606203042
@@ -2097,7 +2097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.04461894, y: 0}
   m_AnchorMax: {x: 0.316, y: 1}
-  m_AnchoredPosition: {x: -6.8999863, y: 0}
+  m_AnchoredPosition: {x: -6.899994, y: 0}
   m_SizeDelta: {x: -21.800003, y: -12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730639189
@@ -2172,7 +2172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 296.2, y: -142.35}
+  m_AnchoredPosition: {x: 10.700012, y: -142.35}
   m_SizeDelta: {x: 160, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748236158
@@ -2595,7 +2595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2013681637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2696,8 +2696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eead41f1a628f344197c23add8dcfacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1313094497753242, guid: 84c5522ddd90de142847a4c425c36c19, type: 2}
-  bulletPrefabs: []
+  bulletPrefabs:
+  - {fileID: 1313094497753242, guid: 84c5522ddd90de142847a4c425c36c19, type: 2}
   scenePaths:
   - Area1
   - Area2

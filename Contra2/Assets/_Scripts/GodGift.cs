@@ -9,8 +9,10 @@ public class GodGift : MonoBehaviour {
 
 	private bool hit;
 	private float timeWait;
+	private Rigidbody2D rigidbody2D;
 	void Start () {
 		timeWait = Time.time;
+		rigidbody2D = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class GodGift : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		Debug.Log(collision.gameObject.tag);
 		if (collision.gameObject.tag == "Player")
 		{
 			Debug.Log("player");
@@ -36,6 +39,11 @@ public class GodGift : MonoBehaviour {
 			}
 			hit = true;
 			Destroy(gameObject);
+		}
+		else  if (collision.gameObject.tag == "Background")
+		{
+			Debug.Log("here");
+			rigidbody2D.gravityScale = 0;
 		}
 	}
 }

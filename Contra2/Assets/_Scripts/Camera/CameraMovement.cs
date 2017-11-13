@@ -21,10 +21,29 @@ public class CameraMovement : MonoBehaviour {
 	public float offSet;
 	private float startTime, journeyLength, speed;
 	public float insanceDistance;
+
+	private float TARGET_WIDTH = 7;
+	private float TARGET_HEIGHT = 6;
+	int PIXELS_TO_UNITS = 30;
+	public bool Pause
+	{
+		get; set;
+	}
 	private void Awake()
 	{
-
-
+		/*
+		float desiredRatio = TARGET_WIDTH / TARGET_HEIGHT;
+		
+		float currentRatio = (float)Screen.width / (float)Screen.height;
+		Debug.Log(currentRatio);
+		if (currentRatio >= desiredRatio)
+			Camera.main.orthographicSize = TARGET_HEIGHT / 4 / PIXELS_TO_UNITS;
+		else
+		{
+			float differenceInSize = desiredRatio / currentRatio;
+			Camera.main.orthographicSize = TARGET_HEIGHT / 4 / PIXELS_TO_UNITS * differenceInSize;
+		}
+		*/
 	}
 	void Start() {
 		collider = GetComponent<Collider2D>();
@@ -42,6 +61,7 @@ public class CameraMovement : MonoBehaviour {
 	}
 	private void FixedUpdate()
 	{
+		if(!Pause)
 		MoveCamera();
 	}
 	//bug
@@ -72,7 +92,7 @@ public class CameraMovement : MonoBehaviour {
 				newTarget.x += cameraSpeedX * Time.fixedDeltaTime;
 			}
 			transform.position = Vector3.Lerp(currentPosition, newTarget, fracJourney);
-
+			Debug.Log("bug here");
 		}
 		if (inSance)
 		{

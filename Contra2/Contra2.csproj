@@ -135,6 +135,7 @@
     <Compile Include="Assets\_Scripts\MoveTheoYeuCau.cs" />
     <Compile Include="Assets\_Scripts\Parabol.cs" />
     <Compile Include="Assets\_Scripts\Player\Bullet.cs" />
+    <Compile Include="Assets\_Scripts\Player\ForArea1.cs" />
     <Compile Include="Assets\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\_Scripts\PreGameHandler.cs" />
     <Compile Include="Assets\_Scripts\RefDefinition.cs" />

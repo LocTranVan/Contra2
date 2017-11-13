@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class Character : MonoBehaviour {
 
@@ -104,8 +105,13 @@ public abstract class Character : MonoBehaviour {
 		{
 		//	Debug.Log(other.transform.position);
 			GameObject camera = GameObject.Find("Main Camera");
-			camera.GetComponent<CameraMovement>().setMileStones(new Vector3(0, other.transform.position.y, 0));
-			//camera.GetComponent<CameraMovement>().setBlock(true);
+			
+			if(other.gameObject.name == "End")
+				camera.GetComponent<CameraMovement>().setBlock(true);
+			else if (other.gameObject.name == "NextGame")
+				SceneManager.LoadScene("EndGame");
+			else
+				camera.GetComponent<CameraMovement>().setMileStones(new Vector3(0, other.transform.position.y, 0));
 		}
 		if (other.tag == "UnderWater" )
 		{
@@ -166,9 +172,10 @@ public abstract class Character : MonoBehaviour {
 
 
 		GameObject bullets = Instantiate(bullet, positionGun, Quaternion.identity);
+		bullets.GetComponent<Bullet>().setSpeed(new Vector2(speedX, speedY));
 		bullets.GetComponent<Bullet>().setTagShoot(gameObject.tag);
 	//	bullets.layer = gameObject.layer;
-		bullets.GetComponent<Bullet>().setSpeed(new Vector2(speedX, speedY));
+
 	}
 	// Update is called once per frame
 	void Update () {

@@ -42,7 +42,7 @@ public class ListEnemyArea2 : MonoBehaviour
 		{
 			yield return new WaitForSeconds(waitTime);
 			int number = Random.Range(1, Gift.Count);
-			Vector2 pos = new Vector2(startSpawPositon.position.x, startSpawPositon.position.y);
+			Vector2 pos = new Vector2(startSpawPositon.position.x, startSpawPositon.position.y +3);
 			Instantiate(Gift[number - 1], pos, Quaternion.identity);
 			yield return new WaitForSeconds(Random.Range(waitTime, waitTime * 20));
 		}

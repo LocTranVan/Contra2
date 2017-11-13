@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Maybay
+  m_Controller: {fileID: 9100000, guid: c7593ff0d06f2fa4d8814c92641c1fec, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f80fe52139fb0794ca354019b2754aff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1899b5c5c9bc55d43bc25468a6f8a06c, type: 2}

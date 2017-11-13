@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
     
-	public GameObject bullet;
     public GameObject[] bulletPrefabs;
 	public static GameManager instance = null;
 	public string[] scenePaths = { "Area1", "Area2", "Area3" };
@@ -38,7 +37,7 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-	//	init();
+		//init();
 	}
 	// Test
 	/*
@@ -46,9 +45,12 @@ public class GameManager : MonoBehaviour {
 	{
 		lives = 3;
 		immortal = true;
+		Bullet = bulletPrefabs[0];
+		gameResult = new Dictionary<string, int>();
 		SceneManager.LoadScene("Area1");
 	}
 	*/
+	
 
     public void setResult(string key, int value)
     {
@@ -64,4 +66,21 @@ public class GameManager : MonoBehaviour {
             gameResult.Add(key, value);
         }
     }
+	public void changeResult(string key, int offset)
+	{
+		int val;
+		if (gameResult.TryGetValue(key, out val))
+		{
+			// yay, value exists!
+			gameResult[key] = val + offset;
+			Debug.Log(key + val);
+		}
+		else
+		{
+			// darn, lets add the value
+			gameResult.Add(key, offset);
+			Debug.Log("key"+key + val);
+		}
+	}
+
 }

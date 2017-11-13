@@ -10,7 +10,7 @@ public class Parabol : MonoBehaviour {
 	public float angleStart, angleEnd, SpeedX, SpeedY;
 	public bool prabol, cos;
 	public float speed;
-	public GameObject Gift;
+	public GameObject[] Gift;
 	private Vector2 direction;
 	void Start () {
 		mrigidbody2D = GetComponent<Rigidbody2D>();
@@ -46,7 +46,7 @@ public class Parabol : MonoBehaviour {
 	}
 	public void intanceGift()
 	{
-		Instantiate(Gift, transform.position + new Vector3(0, 5, 0), Quaternion.identity);
+		Instantiate(Gift[Random.Range(0, Gift.Length)], transform.position + new Vector3(0, 5, 0), Quaternion.identity);
 		Destroy(gameObject);
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
