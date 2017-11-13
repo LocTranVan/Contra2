@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -91,7 +92,7 @@ public class Player : Character
 			float v = ETCInput.GetAxis("Vertical");
 
 			Animating(h, v);
-			if(v >= 0)
+		//	if(v >= 0)
 				Move(h, v);
 			if (jump && onGround)
 			{
@@ -228,6 +229,10 @@ public class Player : Character
 				if(lives > 0) { 
 					invalid = true;
 					waitTime = Time.time;
+				}
+				else
+				{
+					SceneManager.LoadScene("EndGame");
 				}
 			}
 		}

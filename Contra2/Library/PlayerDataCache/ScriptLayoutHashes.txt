@@ -86,6 +86,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+bb3594a272d386e1ad5b36232476a564 Assembly-CSharp.dll:.EndGameHandler
 2884caf65d32fcb5d3dedbdedbd43749 Assembly-CSharp.dll:.ListEnemyArea2
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ETWindow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Ball
@@ -135,6 +136,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 88e7a4bdcdd844fd02779d400cbac599 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickLongTap
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Test2
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UIDrag
 dabcc2e8927c5a63aeb92cb3001dd0c9 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.EasyTouchTrigger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UIWindow
@@ -155,7 +157,7 @@ ad5bb0671e9bf5efc7800f9845d29332 Assembly-CSharp.dll:.Tank
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CubeSelect
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MissionManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LongTapMe
-e75494468ffcab55c0d2e5b32d5d27b8 Assembly-CSharp.dll:.PreGameHandler
+0e2214526ea9f98964c1edeb6f459b4c Assembly-CSharp.dll:.PreGameHandler
 98c01a2e666d6d7f66de029568da7db7 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickTouch
 ae6f316f39119e2c8667e039ecdffb69 Assembly-CSharp.dll:.ForArea1
 b140b09235077b07b3557ccdcb7b56cb Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickBase

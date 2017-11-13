@@ -73,6 +73,7 @@ public class Tank : MonoBehaviour {
 			if(gameObject.tag == "Boss")
 			{
 				Camera.GetComponent<CameraMovement>().setBlock(false);
+				//JoyticsAndLive.instance.enableSouldClear();
 				Destroy(gameObject); 
 			}
 			foreach(Transform tranform in gameObject.GetComponentsInChildren(typeof(Transform), true))

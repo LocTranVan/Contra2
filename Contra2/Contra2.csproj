@@ -127,6 +127,7 @@
     <Compile Include="Assets\_Scripts\Gun.cs" />
     <Compile Include="Assets\_Scripts\Helper.cs" />
     <Compile Include="Assets\_Scripts\ItemPrice.cs" />
+    <Compile Include="Assets\_Scripts\JoyticsAndLive.cs" />
     <Compile Include="Assets\_Scripts\ManagerGun.cs" />
     <Compile Include="Assets\_Scripts\MenuHandler.cs" />
     <Compile Include="Assets\_Scripts\Mission\KillMission.cs" />

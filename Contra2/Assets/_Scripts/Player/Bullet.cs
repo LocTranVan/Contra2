@@ -66,9 +66,12 @@ public class Bullet : MonoBehaviour {
 		
 			if(collision.gameObject.tag != nameTag)
 			{
-			//		boom = true;
-			//	rigidbody2D.velocity = Vector2.zero;
-			//rigidbody2D.Sleep();
+			//	boom = true;
+			if (rigidbody2D != null)
+			{
+				rigidbody2D.velocity = Vector2.zero;
+				rigidbody2D.Sleep();
+			}
 					Animator anim = GetComponent<Animator>();
 					if(animator != null)
 		

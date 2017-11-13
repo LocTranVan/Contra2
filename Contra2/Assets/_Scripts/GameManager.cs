@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-		//init();
+		init();
 	}
 	// Test
-	/*
+	
 	public void init()
 	{
 		lives = 3;
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 		gameResult = new Dictionary<string, int>();
 		SceneManager.LoadScene("Area1");
 	}
-	*/
+	
 	
 
     public void setResult(string key, int value)
@@ -73,13 +73,13 @@ public class GameManager : MonoBehaviour {
 		{
 			// yay, value exists!
 			gameResult[key] = val + offset;
-			Debug.Log(key + val);
+			//Debug.Log(key + val);
 		}
 		else
 		{
 			// darn, lets add the value
 			gameResult.Add(key, offset);
-			Debug.Log("key"+key + val);
+			//Debug.Log("key"+key + val);
 		}
 	}
 

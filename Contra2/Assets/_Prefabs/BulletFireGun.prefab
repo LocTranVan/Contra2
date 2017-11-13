@@ -120,12 +120,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleStart: 0
   angleEnd: 0
-  SpeedX: 1
-  SpeedY: 1
+  SpeedX: 0
+  SpeedY: 0
   prabol: 1
   cos: 0
   speed: -10
-  Gift: {fileID: 0}
+  Gift:
+  - {fileID: 0}
 --- !u!114 &114431603808709344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3320a350d88243e48af13b2669522b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitBackground: {fileID: 0}
 --- !u!212 &212714375803741230
 SpriteRenderer:
   m_ObjectHideFlags: 1

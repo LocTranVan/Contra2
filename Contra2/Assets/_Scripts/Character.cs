@@ -21,8 +21,6 @@ public abstract class Character : MonoBehaviour {
 	*/
 	[SerializeField]
 	private List<string> damageSources;
-
-
 	protected bool facingRight;
 	protected bool invalid
 	{
@@ -163,6 +161,14 @@ public abstract class Character : MonoBehaviour {
 		{
 			positionGun = transform.position;
 			speedX = direc;
+			float h = ETCInput.GetAxis("Horizontal");
+			float v = ETCInput.GetAxis("Vertical");
+					
+			if(v != 0)
+				speedX = direc * Mathf.Abs(h);
+			
+			speedY = (int)v;
+			Debug.Log(speedY);
 		}
 		else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsTag("LayingDown"))
 		{
@@ -177,6 +183,7 @@ public abstract class Character : MonoBehaviour {
 	//	bullets.layer = gameObject.layer;
 
 	}
+	
 	// Update is called once per frame
 	void Update () {
 		
