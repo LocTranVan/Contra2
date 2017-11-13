@@ -10,24 +10,6 @@ using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour {
 
-    public class User
-    {
-        public string username;
-        public string email;
-        public int age;
-
-        public User()
-        {
-        }
-
-        public User(string username, string email, int age)
-        {
-            this.username = username;
-            this.email = email;
-            this.age = age;
-        }
-    }
-
     public InputField emailInputField, passwordInputField;
     private FirebaseAuth auth;
     private DatabaseReference reference;
@@ -42,10 +24,14 @@ public class MenuHandler : MonoBehaviour {
     {
         LeanTween.alpha(icon.GetComponent<RectTransform>(), 0.0f, 0.0f);
         auth = FirebaseAuth.DefaultInstance;
-        passwordInputField.inputType = InputField.InputType.Password;
+        // Set up the Editor before calling into the realtime database.
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://super-contra-20171.firebaseio.com/");
 
-        //init null player
-        if (PlayerPrefs.GetString(RefDefinition.UID) != "")
+        // Get the root reference location of the database.
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        LeanTween.alpha(icon.GetComponent<RectTransform>(), 1.0f, 2.0f);
+        passwordInputField.inputType = InputField.InputType.Password;
+        if (!PlayerPrefs.GetString(RefDefinition.UID).Equals(""))
         {
             InitTopBar();
         }
@@ -56,12 +42,6 @@ public class MenuHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        // Set up the Editor before calling into the realtime database.
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://super-contra-20171.firebaseio.com/");
-
-        // Get the root reference location of the database.
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
-        LeanTween.alpha(icon.GetComponent<RectTransform>(), 1.0f, 2.0f);
 	}
 	
 	// Update is called once per frame
@@ -73,7 +53,7 @@ public class MenuHandler : MonoBehaviour {
     {
         //show login panel
         //if logined, do notthing
-        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
+        if (PlayerPrefs.GetString(RefDefinition.UID).Equals(""))
         {
             playPanel.SetActive(false);
             emailInputField.text = "";
@@ -117,7 +97,7 @@ public class MenuHandler : MonoBehaviour {
                 // Firebase user has been created.
                 PlayerPrefs.SetString("email", newUser.Email);
                 //PlayerPrefs.SetString("display_name", newUser.DisplayName);
-                PlayerPrefs.SetString("uid", newUser.UserId);
+                PlayerPrefs.SetString(RefDefinition.UID, newUser.UserId);
                 PlayerPrefs.SetInt(RefDefinition.OFFLINE_MODE, 0);
 
                 ShowPlayPanel();
@@ -140,7 +120,7 @@ public class MenuHandler : MonoBehaviour {
     public void ShowPlayPanel()
     {
         loginPanel.SetActive(false);
-        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
+        if (PlayerPrefs.GetString(RefDefinition.UID).Equals(""))
         {
             //not login jet
             playImmortalModeBtn.gameObject.SetActive(true);
@@ -162,7 +142,6 @@ public class MenuHandler : MonoBehaviour {
         Debug.Log("Init top bar");
         //get coin from db
         DatabaseReference userRef = reference.Child("User").Child(PlayerPrefs.GetString("uid"));
-        topBarPanel.SetActive(true);
 
         userRef.Child("Coin").GetValueAsync().ContinueWith(task => {
             
@@ -183,6 +162,7 @@ public class MenuHandler : MonoBehaviour {
                 coinText.text = snapshot.Value.ToString();
                 coin = System.Int32.Parse(snapshot.Value.ToString());
             }
+            SetActivePanel(topBarPanel, true);
             disableLoading();
         });
     }
@@ -316,13 +296,13 @@ public class MenuHandler : MonoBehaviour {
     public void play(bool immortal)
     {
         GameManager.instance.immortal = immortal;
-        GameManager.instance.currentArea = 0;
+        GameManager.instance.currentArea = 2;
         //set default bullet...
         GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[0];
 
         if (immortal)
         {
-            GameManager.instance.lives = RefDefinition.IMMORTAL_LIVE_VALUE;
+            GameManager.instance.lives = RefDefinition.DEFAULT_LIVES;
         } else
         {
             GameManager.instance.lives = RefDefinition.DEFAULT_LIVES;

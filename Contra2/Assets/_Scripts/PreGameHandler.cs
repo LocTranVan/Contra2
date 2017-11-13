@@ -29,7 +29,7 @@ public class PreGameHandler : MonoBehaviour {
             {
                 //immortal mode
                 Debug.Log("PreGame Immortal mode");
-                live = RefDefinition.IMMORTAL_LIVE_VALUE;
+                live = GameManager.instance.lives;
                 livesText.text = "IMMORTAL MODE";
             } else
             {
