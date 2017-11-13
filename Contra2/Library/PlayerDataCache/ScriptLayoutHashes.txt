@@ -177,7 +177,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 1becd7d9373a4092235f47b8d96690ce Assembly-CSharp.dll:.FingerTouch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DoubleTapMe
-903aa5ad9ed30d6210ca6d244ab7175e Assembly-CSharp.dll:.Gun
+0e45f958aca69766fb738dc6a7abf39e Assembly-CSharp.dll:.Gun
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadExamples
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TwoTapMe
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ETCInput
@@ -217,6 +217,7 @@ ba3bd209617a51f21ebc145dc5acefe8 Assembly-CSharp.dll:.ETCArea
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.test
 d653f62696ac919674f74bef9fa06752 Assembly-CSharp.dll:HedgehogTeam.EasyTouch.QuickDrag
+1113b7c29a72f46fb6d9655d9b855f14 Assembly-CSharp.dll:.JoyticsAndLive
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RTS_NewSyntaxe
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UITwist
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UIPinch

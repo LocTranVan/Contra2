@@ -37,10 +37,11 @@ public class Bullet : MonoBehaviour {
 		{
 			float speedB = speedBullet * Time.deltaTime;
 			transform.position += new Vector3(speedX * speedB, speedY * speedB, 0);
-			if (Vector2.Distance(startPosition, transform.position) >= rangeShoot)
-			{
-				if (gameObject.tag == "Gift")
-					Destroy(gameObject);
+
+				if (Vector2.Distance(startPosition, transform.position) >= rangeShoot)
+				{
+					if (gameObject.tag == "Gift")
+						Destroy(gameObject);
 				else
 				{
 					if(animator != null)
@@ -66,12 +67,13 @@ public class Bullet : MonoBehaviour {
 		
 			if(collision.gameObject.tag != nameTag)
 			{
-			//	boom = true;
-			if (rigidbody2D != null)
-			{
+			//boom = true;
+				if (rigidbody2D != null)
+					{
+				Debug.Log(collision.gameObject.name);
 				rigidbody2D.velocity = Vector2.zero;
 				rigidbody2D.Sleep();
-			}
+					}
 					Animator anim = GetComponent<Animator>();
 					if(animator != null)
 		

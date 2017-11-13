@@ -177,13 +177,22 @@ public class Enemy : Character {
 	}
 	public void checkName()
 	{
-		Debug.Log(gameObject.name);
+		//Debug.Log(gameObject.name);
 		if (gameObject.name.Contains("Sandbag Sniper"))
+		{
 			GameManager.instance.changeResult(RefDefinition.SANDBAG_SNIPER, 1);
+			GameManager.instance.changeResult(RefDefinition.SCORE, 3);
+		}
 		else if (gameObject.name.Contains("Outpost Unarmed Foot Soldier") || gameObject.name.Contains("Outpost Unarmed Foot SoldierPink"))
+		{
 			GameManager.instance.changeResult(RefDefinition.SOLDIER, 1);
-		else if(gameObject.name.Contains("Base Standing Sniper"))
+			GameManager.instance.changeResult(RefDefinition.SCORE, 1);
+		}
+		else if (gameObject.name.Contains("Base Standing Sniper"))
+		{
 			GameManager.instance.changeResult(RefDefinition.SNIPER, 1);
+			GameManager.instance.changeResult(RefDefinition.SCORE, 2);
+		}
 	}
 	public void Boom()
 	{

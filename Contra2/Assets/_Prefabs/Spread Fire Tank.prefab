@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4712166245153342}
   - component: {fileID: 212807281281189166}
   - component: {fileID: 114647524480659496}
+  - component: {fileID: 82538902175192270}
   m_Layer: 8
   m_Name: gunTank
   m_TagString: Tank
@@ -304,6 +305,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.09, y: 2.3872144}
   m_EdgeRadius: 0
+--- !u!82 &82538902175192270
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085497481468258}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114078257584158724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,11 +399,15 @@ MonoBehaviour:
   positionGun:
   - {fileID: 4625292876573238}
   waitTimeOnceFire: 1
+  waitTimeOnceBullet: 0
   numberBulletOnceShoot: 1
   bullet: {fileID: 1483018011944096, guid: 92ed7aff4e7973549b9827f1de362823, type: 2}
   canTranform: 1
   canRotate: 1
+  canChangeImage: 0
   jerkOnceShoot: 1
+  sprite: []
+  shoot: {fileID: 0}
 --- !u!114 &114493546800882666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,8 +419,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913f31c7d632f164c8e8a19da0837c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 20
+  speedMovement: 0
+  speed: 0
   Brooken: {fileID: 1147875642536010, guid: f85b6bb58b5b66d46b4234ca348d2811, type: 2}
+  canMove: 0
+  Player:
+    serializedVersion: 2
+    m_Bits: 0
   damageSources:
   - NormalGun
 --- !u!114 &114647524480659496
@@ -354,11 +445,15 @@ MonoBehaviour:
   - {fileID: 4618963612346048}
   - {fileID: 4277153635616974}
   waitTimeOnceFire: 2
+  waitTimeOnceBullet: 0
   numberBulletOnceShoot: 1
   bullet: {fileID: 1713704321163498, guid: c126105f7f91fea4397058754d995249, type: 2}
   canTranform: 1
   canRotate: 0
+  canChangeImage: 0
   jerkOnceShoot: 1
+  sprite: []
+  shoot: {fileID: 8300000, guid: f71c464b9bf404745a201dd40405d6c4, type: 3}
 --- !u!212 &212393528251433212
 SpriteRenderer:
   m_ObjectHideFlags: 1

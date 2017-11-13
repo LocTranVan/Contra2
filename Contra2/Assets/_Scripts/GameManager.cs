@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 		get; set;
 	}
 
-    
+	private int test;
 	void Start () {
 		
 		if (instance == null)
@@ -48,12 +48,19 @@ public class GameManager : MonoBehaviour {
 		immortal = true;
 		Bullet = bulletPrefabs[0];
 		gameResult = new Dictionary<string, int>();
-		SceneManager.LoadScene("Area1");
+		SceneManager.LoadScene("Area2");
 	}
 	*/
-	
+	//test 2
+	/*
+	public void changeScne()
+	{
+		test++;
+		SceneManager.LoadScene(scenePaths[test]);
+	}
+	*/
 
-    public void setResult(string key, int value)
+	public void setResult(string key, int value)
     {
         int val;
         if (gameResult.TryGetValue(key, out val))
@@ -74,13 +81,13 @@ public class GameManager : MonoBehaviour {
 		{
 			// yay, value exists!
 			gameResult[key] = val + offset;
-			//Debug.Log(key + val);
+			Debug.Log(key + val);
 		}
 		else
 		{
 			// darn, lets add the value
 			gameResult.Add(key, offset);
-			//Debug.Log("key"+key + val);
+			Debug.Log("key"+key + val);
 		}
 	}
 
