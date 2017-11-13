@@ -228,6 +228,7 @@ public class Player : Character
 				}
 				else
 				{
+                    GameManager.instance.isGameOver = true;
 					SceneManager.LoadScene("EndGame");
 				}
 			}

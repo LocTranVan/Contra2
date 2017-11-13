@@ -296,7 +296,7 @@ public class MenuHandler : MonoBehaviour {
     public void play(bool immortal)
     {
         GameManager.instance.immortal = immortal;
-        GameManager.instance.currentArea = 2;
+        GameManager.instance.currentArea = 0;
         //set default bullet...
         GameManager.instance.Bullet = GameManager.instance.bulletPrefabs[0];
 

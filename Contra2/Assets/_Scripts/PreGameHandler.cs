@@ -20,7 +20,7 @@ public class PreGameHandler : MonoBehaviour {
     {
         isBulletPurchased = false;
         stageText.text = "Area " + (GameManager.instance.currentArea + 1).ToString();
-        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1)
+        if (PlayerPrefs.GetString(RefDefinition.UID).Equals(""))
         {
             //offline mode
             topBarPanel.SetActive(false);

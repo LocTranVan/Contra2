@@ -37,7 +37,7 @@ public class EndGameHandler : MonoBehaviour {
             title.text = "Area " + areaIndex + " Complete";
         }
 
-        if (PlayerPrefs.GetInt(RefDefinition.OFFLINE_MODE) == 1) 
+        if (PlayerPrefs.GetString(RefDefinition.UID).Equals("")) 
         {
             //offline mode, just get score,  area
             setEnablePanel(loadingPanel, false);
@@ -196,6 +196,11 @@ public class EndGameHandler : MonoBehaviour {
 
     public void ToMainMenu()
     {
+        GameManager.instance.isGameOver = false;
+        GameManager.instance.setResult(RefDefinition.SCORE, 0);
+        GameManager.instance.setResult(RefDefinition.SOLDIER, 0);
+        GameManager.instance.setResult(RefDefinition.SNIPER, 0);
+        GameManager.instance.setResult(RefDefinition.SANDBAG_SNIPER, 0);
         SceneManager.LoadScene("Menu");
     }
 }
