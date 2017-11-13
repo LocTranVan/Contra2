@@ -3738,6 +3738,8 @@ MonoBehaviour:
   damageSources:
   - bulletEnemy
   - Enemy
+  - FireballGun
+  - MachineGunRed
   health: 1
   shoot: {fileID: 8300000, guid: a6b37406c3d2cf445bdd470995e7c231, type: 3}
   Dead: {fileID: 8300000, guid: 5221e045caf8420458ef109d2baed7a0, type: 3}
@@ -4093,6 +4095,16 @@ Prefab:
       propertyPath: m_TagString
       value: Base Standing Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
   m_IsPrefabParent: 0
@@ -4292,6 +4304,16 @@ Prefab:
     - target: {fileID: 1348601075939566, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
       propertyPath: m_TagString
       value: Base Standing Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
@@ -5180,6 +5202,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
   m_IsPrefabParent: 0
@@ -5282,7 +5314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913f31c7d632f164c8e8a19da0837c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 200
   speedMovement: 1
   speed: 1
   Brooken: {fileID: 1147875642536010, guid: f85b6bb58b5b66d46b4234ca348d2811, type: 2}

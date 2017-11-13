@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour {
         //init();
     }
 	// Test
-	/*
+
+	/*	
 	public void init()
 	{
 		lives = 3;
