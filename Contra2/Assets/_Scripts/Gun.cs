@@ -15,6 +15,8 @@ public class Gun : MonoBehaviour {
 	public float jerkOnceShoot;
 	public Sprite[] sprite;
 	//public float rangeShoot;
+	public AudioClip shoot;
+	private AudioSource audioSource;
 
 	private Transform Target;
 	private IEnumerator coroutine;
@@ -30,7 +32,7 @@ public class Gun : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Target = GameObject.Find("Player").transform;
-
+		audioSource = GetComponent<AudioSource>();
 		mSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 		init();
 
@@ -157,7 +159,8 @@ public class Gun : MonoBehaviour {
 							Assets._Scripts.Helper.getIntance().GetDirection(transform.position - pGun.position, 0.2f);
 
 					bullets.GetComponent<Bullet>().setSpeed(directionBullet);
-
+						if (audioSource != null)
+							audioSource.PlayOneShot(shoot);
 					startTimeShoot = Time.time;
 					Shooting = true;
 				}

@@ -69,14 +69,14 @@ public class ListEnemyArea2 : MonoBehaviour
 		{
 			Vector2 pos = new Vector2(Random.Range(startSpawPositon.position.x, startSpawPositon.position.x + 5f), startSpawPositon.position.y);
 			RaycastHit2D hit = Physics2D.Raycast(new Vector2(pos.x, pos.y), Vector2.down, background);
-			if(hit.distance >= 1f)
+			if(hit.distance >= 1.2f)
 			Instantiate(enemySolider, pos, Quaternion.identity);
 		}
 		if (hitEnd.distance >= 5f)
 		{
 			Vector2 pos = new Vector2(Random.Range(endSpawPosition.position.x - 5f, endSpawPosition.position.x), endSpawPosition.position.y);
 			RaycastHit2D hit = Physics2D.Raycast(new Vector2(pos.x, pos.y), Vector2.down, background);
-			if (hit.distance >= 1f)
+			if (hit.distance >= 1.2f)
 				Instantiate(enemySolider, pos, Quaternion.identity);
 		}
 		if (!checkRayCast)

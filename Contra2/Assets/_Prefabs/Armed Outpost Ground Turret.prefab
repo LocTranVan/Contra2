@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913f31c7d632f164c8e8a19da0837c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 1
+  Health: 6
   speedMovement: 0
   speed: 0
   Brooken: {fileID: 1147875642536010, guid: f85b6bb58b5b66d46b4234ca348d2811, type: 2}
@@ -140,6 +140,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!212 &212316719222664928
 SpriteRenderer:
   m_ObjectHideFlags: 1

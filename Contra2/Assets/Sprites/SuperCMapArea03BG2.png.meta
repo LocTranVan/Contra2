@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: eed168d74e0ec5f49a8353534ad7706a
-timeCreated: 1510301191
+timeCreated: 1510593409
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: SuperCMapArea03BG2_1
     21300004: SuperCMapArea03BG2_2
     21300006: SuperCMapArea03BG2_3
+    21300008: SuperCMapArea03BG2_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -104,9 +105,9 @@ TextureImporter:
       name: SuperCMapArea03BG2_1
       rect:
         serializedVersion: 2
-        x: 5023
+        x: 4914
         y: 0
-        width: 33
+        width: 32
         height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -136,6 +137,20 @@ TextureImporter:
         y: 0
         width: 245
         height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SuperCMapArea03BG2_4
+      rect:
+        serializedVersion: 2
+        x: 4768
+        y: 0
+        width: 31
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

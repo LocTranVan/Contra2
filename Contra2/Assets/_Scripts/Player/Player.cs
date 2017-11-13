@@ -212,19 +212,15 @@ public class Player : Character
 			health -= 1;
 			if (health == 0 )
 			{
-				
-				lives--;
-				GameManager.instance.lives = lives;
-
 				mAnimator.ResetTrigger("Jump");
 				if (!liveForever)
 				{
 					mAnimator.SetTrigger("Dead");
 					IsDead = true;
+					lives--;
+					GameManager.instance.lives = lives;
+					audioSource.PlayOneShot(Dead);
 				}
-			
-
-				audioSource.PlayOneShot(Dead);
 				Physics2D.IgnoreLayerCollision(9, 12, true);
 				if(lives > 0) { 
 					invalid = true;

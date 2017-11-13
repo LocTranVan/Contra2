@@ -103,11 +103,11 @@ public abstract class Character : MonoBehaviour {
 		{
 		//	Debug.Log(other.transform.position);
 			GameObject camera = GameObject.Find("Main Camera");
-			
-			if(other.gameObject.name == "End")
+
+			if (other.gameObject.name == "End")
 				camera.GetComponent<CameraMovement>().setBlock(true);
 			else if (other.gameObject.name == "NextGame")
-				SceneManager.LoadScene("EndGame");
+				SceneManager.LoadScene("EndGame");			
 			else
 				camera.GetComponent<CameraMovement>().setMileStones(new Vector3(0, other.transform.position.y, 0));
 		}
