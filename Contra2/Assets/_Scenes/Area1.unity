@@ -449,6 +449,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!4 &241601681
 Transform:
   m_ObjectHideFlags: 0
@@ -527,6 +528,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!212 &261673392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -652,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 238.29999, y: -75.00012}
+  m_AnchoredPosition: {x: 238.3, y: -75.00012}
   m_SizeDelta: {x: 40, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311113703
@@ -1820,6 +1822,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!212 &736617194
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1994,7 +1997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913f31c7d632f164c8e8a19da0837c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 200
   speedMovement: 0
   speed: 0
   Brooken: {fileID: 1147875642536010, guid: f85b6bb58b5b66d46b4234ca348d2811, type: 2}
@@ -2232,6 +2235,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!4 &786599587
 Transform:
   m_ObjectHideFlags: 0
@@ -2406,6 +2410,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!212 &849076123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4439,6 +4444,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!212 &1503829815
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4778,6 +4784,7 @@ MonoBehaviour:
   canChangeImage: 0
   jerkOnceShoot: 0
   sprite: []
+  shoot: {fileID: 0}
 --- !u!4 &1623976379
 Transform:
   m_ObjectHideFlags: 0
