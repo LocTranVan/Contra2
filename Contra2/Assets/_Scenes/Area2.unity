@@ -2749,7 +2749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 238.3, y: -75.00012}
+  m_AnchoredPosition: {x: 238.29999, y: -75.00012}
   m_SizeDelta: {x: 40, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1050864950
@@ -3738,6 +3738,8 @@ MonoBehaviour:
   damageSources:
   - bulletEnemy
   - Enemy
+  - FireballGun
+  - MachineGunRed
   health: 1
   shoot: {fileID: 8300000, guid: a6b37406c3d2cf445bdd470995e7c231, type: 3}
   Dead: {fileID: 8300000, guid: 5221e045caf8420458ef109d2baed7a0, type: 3}
@@ -4093,6 +4095,16 @@ Prefab:
       propertyPath: m_TagString
       value: Base Standing Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
   m_IsPrefabParent: 0
@@ -4292,6 +4304,16 @@ Prefab:
     - target: {fileID: 1348601075939566, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
       propertyPath: m_TagString
       value: Base Standing Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
@@ -5178,6 +5200,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1348601075939566, guid: b7d487a9ad6aebb45a0d67290a145c77, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82432251296359470, guid: b7d487a9ad6aebb45a0d67290a145c77,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
